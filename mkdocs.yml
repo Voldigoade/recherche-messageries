@@ -1,10 +1,16 @@
 site_name: Étude des messageries
 site_description: Recherche indépendante sur la sécurité, la vie privée et le pseudonymat des messageries.
+site_author: Voldigoade
 site_url: https://voldigoade.github.io/recherche-messageries/
 repo_url: https://github.com/Voldigoade/recherche-messageries
 repo_name: Dépôt GitHub
 edit_uri: edit/main/docs/
 copyright: Recherche indépendante · Rapport 1.0 · 14 octobre 2026 · CC BY-SA 4.0
+not_in_nav: |
+  /guide-rapide.md
+  /guide-rapide.en.md
+  /guide-rapide.es.md
+
 theme:
   name: material
   custom_dir: overrides
@@ -24,10 +30,43 @@ theme:
   - search.highlight
   - content.action.edit
 plugins:
+- i18n:
+    docs_structure: suffix
+    fallback_to_default: false
+    reconfigure_material: true
+    reconfigure_search: true
+    languages:
+    - locale: fr
+      default: true
+      name: Français
+      build: true
+    - locale: en
+      name: English
+      build: true
+      site_name: Secure Messaging Research
+      site_description: Independent research on secure messaging, privacy, pseudonymity, metadata and threat models.
+      nav:
+      - Home: index.md
+      - Quick guide: guide-rapide.md
+      - Summary: resume.md
+      - Comparison: comparatif.md
+      - Choose by use case: usages.md
+    - locale: es
+      name: Español
+      build: true
+      site_name: Investigación sobre mensajería segura
+      site_description: Investigación independiente sobre mensajería segura, privacidad, seudonimato, metadatos y modelos de amenaza.
+      nav:
+      - Inicio: index.md
+      - Guía rápida: guide-rapide.md
+      - Resumen: resume.md
+      - Comparación: comparatif.md
+      - Elegir según el uso: usages.md
 - search:
     lang:
     - fr
     - en
+    - es
 markdown_extensions:
 - admonition
 - attr_list
