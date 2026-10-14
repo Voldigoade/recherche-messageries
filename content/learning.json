@@ -1,0 +1,915 @@
+{
+  "concepts": [
+    {
+      "id": "transit",
+      "title": {
+        "fr": "Chiffrement en transit",
+        "en": "Encryption in transit",
+        "es": "Cifrado en tránsito"
+      },
+      "definition": {
+        "fr": "Protège le trajet entre deux points. Le serveur peut être l’un de ces points.",
+        "en": "Protects the connection between two points. The server may be one of those points.",
+        "es": "Protege la conexión entre dos puntos. El servidor puede ser uno de ellos."
+      },
+      "example": {
+        "fr": "Vous envoyez « rendez-vous à 18 h » via TLS. Le Wi-Fi ne lit pas le texte, mais le serveur qui termine TLS peut le recevoir.",
+        "en": "You send “meet at 6 pm” over TLS. The Wi-Fi cannot read it, but the server terminating TLS can receive it.",
+        "es": "Envía «nos vemos a las 18» por TLS. El Wi-Fi no lee el texto, pero el servidor que termina TLS puede recibirlo."
+      },
+      "protects": {
+        "fr": "Le contenu de la connexion contre un observateur du trajet, dans le modèle du protocole.",
+        "en": "Connection content against an observer on the path, within the protocol model.",
+        "es": "El contenido de la conexión frente a un observador en la ruta, dentro del modelo del protocolo."
+      },
+      "not_protects": {
+        "fr": "Pas nécessairement le contenu envers le serveur ; pas les IP, horaires ou appareils.",
+        "en": "Not necessarily content from the server; not IP addresses, timing or devices.",
+        "es": "No necesariamente el contenido frente al servidor; no IP, horarios ni dispositivos."
+      },
+      "why": {
+        "fr": "Un cadenas dans le navigateur n’établit pas qui peut lire les messages une fois reçus.",
+        "en": "A browser padlock does not establish who can read messages after receipt.",
+        "es": "El candado del navegador no establece quién puede leer los mensajes al recibirlos."
+      },
+      "technical": {
+        "fr": "TLS chiffre une liaison et authentifie son extrémité. Le chiffrement E2EE ajoute une protection du contenu entre les participants.",
+        "en": "TLS encrypts a connection and authenticates its endpoint. E2EE adds content protection between participants.",
+        "es": "TLS cifra una conexión y autentica su extremo. E2EE añade protección del contenido entre participantes."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.definitions",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "e2ee",
+      "title": {
+        "fr": "Chiffrement de bout en bout — E2EE",
+        "en": "End-to-end encryption — E2EE",
+        "es": "Cifrado de extremo a extremo — E2EE"
+      },
+      "definition": {
+        "fr": "Les terminaux des participants contrôlent les clés du contenu. Le serveur de transport ne devrait pas lire les messages normaux.",
+        "en": "Participants’ devices control content keys. The transport server should not read ordinary messages.",
+        "es": "Los dispositivos de los participantes controlan las claves. El servidor de transporte no debería leer mensajes normales."
+      },
+      "example": {
+        "fr": "Alice écrit à Bob. Le relais transporte un texte chiffré ; Bob le déchiffre sur son téléphone.",
+        "en": "Alice messages Bob. The relay carries ciphertext; Bob decrypts it on his phone.",
+        "es": "Alice escribe a Bob. El relé transporta texto cifrado; Bob lo descifra en su teléfono."
+      },
+      "protects": {
+        "fr": "La confidentialité du contenu dans le protocole et le chemin documentés, avec des terminaux intègres.",
+        "en": "Content confidentiality within the documented protocol and path, with uncompromised devices.",
+        "es": "La confidencialidad del contenido en el protocolo y ruta documentados, con dispositivos íntegros."
+      },
+      "not_protects": {
+        "fr": "Ni IP, horaires, compte ou graphe social automatiquement ; ni copie par Bob ou spyware sur un terminal.",
+        "en": "Not automatically IP, timing, account or social graph; not Bob’s copy or endpoint spyware.",
+        "es": "No oculta automáticamente IP, horarios, cuenta o grafo social; tampoco copias de Bob ni spyware."
+      },
+      "why": {
+        "fr": "Le contenu peut être protégé alors que la relation reste identifiable.",
+        "en": "Content can be protected while the relationship remains identifiable.",
+        "es": "El contenido puede estar protegido y la relación seguir siendo identificable."
+      },
+      "technical": {
+        "fr": "Authentification des clés, appareils liés, sauvegardes et implémentations déterminent le périmètre réel. E2EE n’est pas un synonyme d’anonymat.",
+        "en": "Key authentication, linked devices, backups and implementations determine the actual scope. E2EE is not a synonym for anonymity.",
+        "es": "Autenticación de claves, dispositivos vinculados, copias e implementaciones determinan el alcance real. E2EE no significa anonimato."
+      },
+      "behaviour": {
+        "fr": "Signal protège normalement messages et appels ; Discord ne protège pas le texte en E2EE.",
+        "en": "Signal normally protects messages and calls; Discord text is not E2EE.",
+        "es": "Signal protege normalmente mensajes y llamadas; el texto de Discord no usa E2EE."
+      },
+      "sources": [
+        "report.definitions",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "confidentiality",
+      "title": {
+        "fr": "Confidentialité",
+        "en": "Confidentiality",
+        "es": "Confidencialidad"
+      },
+      "definition": {
+        "fr": "Limiter qui peut accéder à une information, par exemple au texte d’une conversation.",
+        "en": "Limit who can access information, such as a conversation’s text.",
+        "es": "Limitar quién accede a una información, como el texto de una conversación."
+      },
+      "example": {
+        "fr": "Le service ne lit pas votre message, mais le destinataire autorisé le lit.",
+        "en": "The service cannot read your message, but the intended recipient can.",
+        "es": "El servicio no lee el mensaje, pero el destinatario autorizado sí."
+      },
+      "protects": {
+        "fr": "L’accès à l’information par des personnes ou systèmes non autorisés, selon le mécanisme choisi.",
+        "en": "Access by unauthorised people or systems, depending on the chosen mechanism.",
+        "es": "El acceso de personas o sistemas no autorizados, según el mecanismo elegido."
+      },
+      "not_protects": {
+        "fr": "Ne dit pas à elle seule si votre identité, votre présence ou vos horaires sont cachés.",
+        "en": "By itself, does not establish whether identity, presence or timing is hidden.",
+        "es": "Por sí sola no establece si identidad, presencia u horarios están ocultos."
+      },
+      "why": {
+        "fr": "Ne pas confondre le secret du texte et le secret de votre activité.",
+        "en": "Do not confuse secrecy of text with secrecy of activity.",
+        "es": "No confundir el secreto del texto con el de la actividad."
+      },
+      "technical": {
+        "fr": "La confidentialité est une propriété ; l’E2EE est un mécanisme possible. Le rapport regroupe aussi contenu et métadonnées sous confidentialité / vie privée.",
+        "en": "Confidentiality is a property; E2EE is one possible mechanism. The report also groups content and metadata under confidentiality / privacy.",
+        "es": "La confidencialidad es una propiedad; E2EE es un mecanismo posible. El informe también agrupa contenido y metadatos bajo confidencialidad / privacidad."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.definitions",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "security",
+      "title": {
+        "fr": "Sécurité",
+        "en": "Security",
+        "es": "Seguridad"
+      },
+      "definition": {
+        "fr": "Prévenir ou limiter la lecture, la modification, l’usurpation et l’indisponibilité face à un adversaire défini.",
+        "en": "Prevent or limit reading, tampering, impersonation and unavailability against a defined adversary.",
+        "es": "Prevenir o limitar lectura, alteración, suplantación e indisponibilidad frente a un adversario definido."
+      },
+      "example": {
+        "fr": "Bob doit recevoir le bon message du bon correspondant, et pouvoir utiliser l’application.",
+        "en": "Bob must receive the correct message from the correct contact and be able to use the application.",
+        "es": "Bob debe recibir el mensaje correcto del contacto correcto y poder usar la aplicación."
+      },
+      "protects": {
+        "fr": "Confidentialité, intégrité, disponibilité et authenticité, selon le modèle de menace.",
+        "en": "Confidentiality, integrity, availability and authenticity, depending on the threat model.",
+        "es": "Confidencialidad, integridad, disponibilidad y autenticidad según el modelo de amenaza."
+      },
+      "not_protects": {
+        "fr": "Un adjectif « sécurisé » ne garantit pas toutes les propriétés ni toutes les versions.",
+        "en": "The adjective “secure” does not guarantee all properties or versions.",
+        "es": "La palabra «seguro» no garantiza todas las propiedades ni versiones."
+      },
+      "why": {
+        "fr": "Choisir exige de préciser ce qui doit être protégé et contre qui.",
+        "en": "Choosing requires specifying what needs protection and from whom.",
+        "es": "Elegir requiere precisar qué proteger y frente a quién."
+      },
+      "technical": {
+        "fr": "Un audit borné n’établit pas la sûreté de toute l’application, de son backend et de ses binaires courants.",
+        "en": "A scope-limited audit does not establish the safety of the whole app, backend and current binaries.",
+        "es": "Una auditoría acotada no establece la seguridad de toda la app, backend y binarios actuales."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.definitions",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "privacy",
+      "title": {
+        "fr": "Vie privée et minimisation des données",
+        "en": "Privacy and data minimisation",
+        "es": "Privacidad y minimización de datos"
+      },
+      "definition": {
+        "fr": "Réduire les informations sur vous qui peuvent être observées, conservées ou reliées.",
+        "en": "Reduce information about you that can be observed, retained or linked.",
+        "es": "Reducir la información sobre usted que puede observarse, conservarse o vincularse."
+      },
+      "example": {
+        "fr": "Votre message reste secret, mais le service sait votre numéro et la dernière connexion.",
+        "en": "Your message stays secret, but the service knows your number and last connection.",
+        "es": "El mensaje sigue secreto, pero el servicio conoce el número y la última conexión."
+      },
+      "protects": {
+        "fr": "Réduit des données de contenu ou de contexte selon l’architecture et les réglages.",
+        "en": "Reduces content or contextual data depending on architecture and settings.",
+        "es": "Reduce datos de contenido o contexto según arquitectura y ajustes."
+      },
+      "not_protects": {
+        "fr": "Ne signifie pas automatiquement anonymat ni absence totale de métadonnées.",
+        "en": "Does not automatically mean anonymity or absence of all metadata.",
+        "es": "No significa automáticamente anonimato ni ausencia total de metadatos."
+      },
+      "why": {
+        "fr": "Les données utiles à une enquête ne se limitent pas aux messages.",
+        "en": "Information useful to an investigation is not limited to messages.",
+        "es": "La información útil para una investigación no se limita a mensajes."
+      },
+      "technical": {
+        "fr": "Distinguer accès nécessaire, rétention annoncée, rétention observée et remise réellement documentée.",
+        "en": "Distinguish necessary access, claimed retention, observed retention and actually documented disclosure.",
+        "es": "Distinguir acceso necesario, retención declarada, retención observada y entrega documentada."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.definitions",
+        "report.metadata",
+        "report.legal"
+      ]
+    },
+    {
+      "id": "metadata",
+      "title": {
+        "fr": "Métadonnées",
+        "en": "Metadata",
+        "es": "Metadatos"
+      },
+      "definition": {
+        "fr": "Les données autour de l’échange : comptes, IP, horaires, volumes, appareils ou groupes.",
+        "en": "Data around the exchange: accounts, IP, timing, volume, devices or groups.",
+        "es": "Datos alrededor del intercambio: cuentas, IP, horarios, volumen, dispositivos o grupos."
+      },
+      "example": {
+        "fr": "Le texte est chiffré, mais le relais observe une connexion à 18 h et sa durée.",
+        "en": "Text is encrypted, but the relay sees a connection at 6 pm and its duration.",
+        "es": "El texto está cifrado, pero el relé ve una conexión a las 18 y su duración."
+      },
+      "protects": {
+        "fr": "Minimiser ces données peut réduire l’identification et la reconstruction des relations.",
+        "en": "Minimising this data can reduce identification and reconstruction of relationships.",
+        "es": "Minimizar estos datos puede reducir identificación y reconstrucción de relaciones."
+      },
+      "not_protects": {
+        "fr": "Chiffrer le corps du message n’efface pas automatiquement le transport ni les données de compte.",
+        "en": "Encrypting the message body does not automatically erase transport or account data.",
+        "es": "Cifrar el cuerpo no borra automáticamente datos de transporte ni de cuenta."
+      },
+      "why": {
+        "fr": "Ces indices peuvent suffire à relier des personnes même sans lire leur texte.",
+        "en": "These clues can link people even without reading their text.",
+        "es": "Estos indicios pueden vincular personas sin leer el texto."
+      },
+      "technical": {
+        "fr": "L’observateur compte : fournisseur, correspondant, FAI, push et autorités n’ont pas la même visibilité.",
+        "en": "The observer matters: provider, peer, ISP, push and authorities have different visibility.",
+        "es": "Importa el observador: proveedor, contacto, ISP, push y autoridades tienen visibilidades distintas."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.metadata"
+      ]
+    },
+    {
+      "id": "telemetry",
+      "title": {
+        "fr": "Télémétrie",
+        "en": "Telemetry",
+        "es": "Telemetría"
+      },
+      "definition": {
+        "fr": "Données qu’une application transmet sur son fonctionnement, par exemple des erreurs ou l’usage.",
+        "en": "Data an application sends about its operation, such as errors or usage.",
+        "es": "Datos que una aplicación envía sobre su funcionamiento, como errores o uso."
+      },
+      "example": {
+        "fr": "Un rapport de crash peut décrire l’appareil ; un relais peut voir des horaires même sans rapport de crash.",
+        "en": "A crash report may describe the device; a relay may see timing even without crash reports.",
+        "es": "Un informe de fallo puede describir el dispositivo; un relé puede ver horarios aun sin esos informes."
+      },
+      "protects": {
+        "fr": "Désactiver une télémétrie optionnelle peut réduire des envois supplémentaires, si cette option est effective.",
+        "en": "Disabling optional telemetry may reduce additional transmissions if the option is effective.",
+        "es": "Desactivar telemetría opcional puede reducir envíos adicionales si el ajuste es efectivo."
+      },
+      "not_protects": {
+        "fr": "Ne supprime pas les métadonnées nécessaires au transport, les notifications ou les logs d’autres acteurs.",
+        "en": "Does not remove transport metadata, notifications or other actors’ logs.",
+        "es": "No elimina metadatos de transporte, notificaciones ni logs de otros actores."
+      },
+      "why": {
+        "fr": "« Pas d’analytics » et « aucune donnée observée » sont deux affirmations différentes.",
+        "en": "“No analytics” and “no observed data” are different claims.",
+        "es": "«Sin analytics» y «ningún dato observado» son afirmaciones diferentes."
+      },
+      "technical": {
+        "fr": "Labels de magasin et permissions sont des déclarations / indices statiques ; le trafic SDK et push courant n’a pas été comparé complètement ici.",
+        "en": "Store labels and permissions are declarations / static clues; current SDK and push traffic was not comprehensively compared here.",
+        "es": "Etiquetas de tienda y permisos son declaraciones / indicios estáticos; no se comparó exhaustivamente el tráfico SDK y push actual."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.audits",
+        "report.methodology"
+      ]
+    },
+    {
+      "id": "pseudonymity",
+      "title": {
+        "fr": "Pseudonymat",
+        "en": "Pseudonymity",
+        "es": "Seudonimato"
+      },
+      "definition": {
+        "fr": "Utiliser une identité différente de votre identité civile. Elle peut toutefois être reliée à vous.",
+        "en": "Use an identity different from your civil identity. It can still be linked to you.",
+        "es": "Usar una identidad distinta de la identidad civil. Aun así puede vincularse con usted."
+      },
+      "example": {
+        "fr": "Alice parle sous un pseudo neuf, mais réutilise sa photo publique : Bob peut faire le lien.",
+        "en": "Alice uses a new alias but reuses her public photo: Bob can make the connection.",
+        "es": "Alice usa un alias nuevo pero reutiliza su foto pública: Bob puede relacionarla."
+      },
+      "protects": {
+        "fr": "La séparation d’identité envers un observateur précis, avec des identifiants et comportements adaptés.",
+        "en": "Identity separation from a specific observer, with suitable identifiers and behaviour.",
+        "es": "Separación de identidad frente a un observador concreto, con identificadores y conducta adecuados."
+      },
+      "not_protects": {
+        "fr": "Ne rend pas invisible le numéro d’inscription, l’IP, les achats, la voix ou les habitudes.",
+        "en": "Does not make registration number, IP, purchases, voice or habits invisible.",
+        "es": "No hace invisibles número de registro, IP, compras, voz ni hábitos."
+      },
+      "why": {
+        "fr": "Cacher un numéro au contact n’est pas le cacher au fournisseur.",
+        "en": "Hiding a number from the contact is not hiding it from the provider.",
+        "es": "Ocultar un número al contacto no equivale a ocultarlo al proveedor."
+      },
+      "technical": {
+        "fr": "Un pseudonyme stable est corrélable. Définir séparément l’observateur et les canaux de liaison.",
+        "en": "A stable pseudonym is linkable. Define the observer and linkage channels separately.",
+        "es": "Un seudónimo estable es vinculable. Definir por separado el observador y los canales de enlace."
+      },
+      "behaviour": {
+        "fr": "Signal peut cacher le numéro au pair après réglages ; le service exige toujours le numéro.",
+        "en": "Signal can hide the number from the peer after configuration; the service still requires it.",
+        "es": "Signal puede ocultar el número al contacto tras configurarlo; el servicio sigue requiriéndolo."
+      },
+      "sources": [
+        "report.definitions",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "anonymity",
+      "title": {
+        "fr": "Anonymat",
+        "en": "Anonymity",
+        "es": "Anonimato"
+      },
+      "definition": {
+        "fr": "Un adversaire défini ne peut pas raisonnablement vous distinguer dans l’ensemble pertinent d’utilisateurs.",
+        "en": "A defined adversary cannot reasonably distinguish you within the relevant set of users.",
+        "es": "Un adversario definido no puede distinguirle razonablemente entre el conjunto pertinente de usuarios."
+      },
+      "example": {
+        "fr": "Un compte sans numéro peut rester identifiable par son IP ou un paiement lié à une identité.",
+        "en": "A phone-free account can still be identifiable by IP or an identity-linked payment.",
+        "es": "Una cuenta sin número puede identificarse por IP o un pago vinculado a una identidad."
+      },
+      "protects": {
+        "fr": "Difficulté d’attribution envers l’adversaire et dans le scénario réellement étudiés.",
+        "en": "Difficulty of attribution against the adversary and scenario actually studied.",
+        "es": "Dificultad de atribución frente al adversario y escenario realmente estudiados."
+      },
+      "not_protects": {
+        "fr": "Pas une propriété absolue d’une application ; pas un remède à la saisie ou au spyware.",
+        "en": "Not an absolute app property; not a remedy for seizure or spyware.",
+        "es": "No es una propiedad absoluta de una app; no resuelve incautación ni spyware."
+      },
+      "why": {
+        "fr": "Demander « anonyme pour qui ? » évite une fausse promesse.",
+        "en": "Asking “anonymous from whom?” avoids a false promise.",
+        "es": "Preguntar «¿anónimo frente a quién?» evita falsas promesas."
+      },
+      "technical": {
+        "fr": "L’ensemble d’anonymat, les capacités de l’adversaire et les informations auxiliaires comptent.",
+        "en": "The anonymity set, adversary capabilities and auxiliary information matter.",
+        "es": "Importan el conjunto de anonimato, capacidades del adversario e información auxiliar."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.definitions",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "network-anonymity",
+      "title": {
+        "fr": "Anonymat réseau",
+        "en": "Network anonymity",
+        "es": "Anonimato de red"
+      },
+      "definition": {
+        "fr": "Réduire la possibilité de relier un trafic à votre adresse réseau ou à son destinataire.",
+        "en": "Reduce the ability to link traffic to your network address or its destination.",
+        "es": "Reducir la capacidad de vincular tráfico con su dirección de red o destino."
+      },
+      "example": {
+        "fr": "TURN cache votre IP à Bob, mais le relais voit l’IP de vos connexions.",
+        "en": "TURN hides your IP from Bob, but the relay sees connection IPs.",
+        "es": "TURN oculta su IP a Bob, pero el relé ve las IP de las conexiones."
+      },
+      "protects": {
+        "fr": "Contre certains observateurs limités, selon le chemin réellement pris.",
+        "en": "Against some limited observers, depending on the actual path.",
+        "es": "Frente a ciertos observadores limitados, según la ruta real."
+      },
+      "not_protects": {
+        "fr": "Ni une corrélation globale des horaires et volumes, ni identité de compte, profil ou voix.",
+        "en": "Not global timing / volume correlation, account identity, profile or voice.",
+        "es": "No evita correlación global de horarios / volumen, identidad de cuenta, perfil ni voz."
+      },
+      "why": {
+        "fr": "Un appel peut prendre une autre route que les messages et révéler une IP.",
+        "en": "A call can take a different route from messages and reveal IP.",
+        "es": "Una llamada puede usar otra ruta que los mensajes y revelar IP."
+      },
+      "technical": {
+        "fr": "Tor/onion et VPN déplacent la visibilité et la confiance. Aucun service étudié ne démontre une résistance générale à l’adversaire passif global.",
+        "en": "Tor/onion and VPNs move visibility and trust. No studied service demonstrates general resistance to a global passive adversary.",
+        "es": "Tor/onion y VPN desplazan visibilidad y confianza. Ningún servicio estudiado demuestra resistencia general al adversario pasivo global."
+      },
+      "behaviour": {
+        "fr": "Cwtch et Briar utilisent Tor ; Session expose l’IP dans ses appels bêta P2P.",
+        "en": "Cwtch and Briar use Tor; Session exposes IP in beta P2P calls.",
+        "es": "Cwtch y Briar usan Tor; Session expone IP en llamadas P2P beta."
+      },
+      "sources": [
+        "report.threats",
+        "report.comparison",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "unlinkability",
+      "title": {
+        "fr": "Unlinkability — séparation des liens",
+        "en": "Unlinkability",
+        "es": "Desvinculación — unlinkability"
+      },
+      "definition": {
+        "fr": "Rendre difficile le lien entre deux identités, relations ou activités.",
+        "en": "Make it difficult to link two identities, relationships or activities.",
+        "es": "Dificultar vincular dos identidades, relaciones o actividades."
+      },
+      "example": {
+        "fr": "Alice utilise deux invitations distinctes, mais copie le même pseudo et avatar : la séparation échoue.",
+        "en": "Alice uses separate invitations but copies the same alias and avatar: separation fails.",
+        "es": "Alice usa invitaciones distintas pero el mismo alias y avatar: falla la separación."
+      },
+      "protects": {
+        "fr": "Réduit certaines jointures entre comptes ou contacts.",
+        "en": "Reduces some joins between accounts or contacts.",
+        "es": "Reduce algunos enlaces entre cuentas o contactos."
+      },
+      "not_protects": {
+        "fr": "Pas les indices partagés volontairement, le timing Discord ou les traces du terminal.",
+        "en": "Not voluntarily shared clues, Discord timing or device traces.",
+        "es": "No oculta indicios compartidos, horarios de Discord ni rastros del dispositivo."
+      },
+      "why": {
+        "fr": "Un identifiant stable peut relier des contextes même sans nom civil.",
+        "en": "A stable identifier can link contexts even without a civil name.",
+        "es": "Un identificador estable puede vincular contextos aun sin nombre civil."
+      },
+      "technical": {
+        "fr": "Séparer les identifiants du compte, ceux d’une relation et les observations réseau.",
+        "en": "Separate account identifiers, relationship identifiers and network observations.",
+        "es": "Separar identificadores de cuenta, de relación y observaciones de red."
+      },
+      "behaviour": {
+        "fr": "SimpleX n’exige pas d’ID global ; l’invitation initiale depuis Discord reste une trace.",
+        "en": "SimpleX requires no global ID; the initial invitation from Discord remains a trace.",
+        "es": "SimpleX no exige ID global; la invitación inicial desde Discord sigue siendo un rastro."
+      },
+      "sources": [
+        "report.definitions",
+        "report.migration"
+      ]
+    },
+    {
+      "id": "traffic-analysis",
+      "title": {
+        "fr": "Analyse de trafic",
+        "en": "Traffic analysis",
+        "es": "Análisis de tráfico"
+      },
+      "definition": {
+        "fr": "Déduire des informations à partir des horaires, tailles, volumes et chemins, sans lire le texte.",
+        "en": "Infer information from timing, sizes, volumes and paths without reading text.",
+        "es": "Inferir información a partir de horarios, tamaños, volumen y rutas sin leer el texto."
+      },
+      "example": {
+        "fr": "Deux connexions répétées apparaissent à quelques secondes d’écart : un observateur cherche une corrélation.",
+        "en": "Two recurring connections appear seconds apart: an observer looks for correlation.",
+        "es": "Dos conexiones repetidas aparecen con segundos de diferencia: un observador busca correlación."
+      },
+      "protects": {
+        "fr": "Padding, délais ou trafic de couverture peuvent limiter certaines inférences selon leur conception.",
+        "en": "Padding, delays or cover traffic can limit some inferences depending on their design.",
+        "es": "Relleno, demoras o tráfico de cobertura pueden limitar inferencias según su diseño."
+      },
+      "not_protects": {
+        "fr": "Le chiffrement seul ne masque pas tous ces indices.",
+        "en": "Encryption alone does not hide all these clues.",
+        "es": "El cifrado por sí solo no oculta todos esos indicios."
+      },
+      "why": {
+        "fr": "Une architecture onion à faible latence ne prouve pas l’immunité globale.",
+        "en": "Low-latency onion architecture does not prove global immunity.",
+        "es": "Una arquitectura onion de baja latencia no demuestra inmunidad global."
+      },
+      "technical": {
+        "fr": "La visibilité multipoint de l’adversaire compte davantage qu’un label « décentralisé ».",
+        "en": "The adversary’s multipoint visibility matters more than a “decentralised” label.",
+        "es": "La visibilidad multipunto del adversario importa más que una etiqueta «descentralizado»."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.definitions",
+        "report.threats"
+      ]
+    },
+    {
+      "id": "forward-secrecy",
+      "title": {
+        "fr": "Forward secrecy — PFS",
+        "en": "Forward secrecy — PFS",
+        "es": "Secreto hacia adelante — PFS"
+      },
+      "definition": {
+        "fr": "Des clés compromises plus tard ne devraient pas dévoiler les anciens messages protégés par des clés éphémères supprimées.",
+        "en": "Keys compromised later should not reveal old messages protected by deleted ephemeral keys.",
+        "es": "Claves comprometidas después no deberían revelar mensajes antiguos protegidos con claves efímeras borradas."
+      },
+      "example": {
+        "fr": "Une clé à long terme est volée aujourd’hui ; cela ne devrait pas suffire à déchiffrer l’ancien trafic enregistré.",
+        "en": "A long-term key is stolen today; that should not be enough to decrypt previously recorded traffic.",
+        "es": "Hoy roban una clave duradera; no debería bastar para descifrar tráfico antiguo grabado."
+      },
+      "protects": {
+        "fr": "La confidentialité de l’historique cryptographique dans le modèle du protocole.",
+        "en": "Confidentiality of cryptographic history within the protocol model.",
+        "es": "La confidencialidad del historial criptográfico dentro del modelo del protocolo."
+      },
+      "not_protects": {
+        "fr": "Pas une base locale déjà déchiffrée, une capture du destinataire ou des clés jamais supprimées.",
+        "en": "Not already decrypted local databases, recipient screenshots or keys never erased.",
+        "es": "No protege bases locales ya descifradas, capturas del destinatario ni claves nunca borradas."
+      },
+      "why": {
+        "fr": "Les garanties peuvent différer entre le téléphone et un PC lié.",
+        "en": "Guarantees may differ between a phone and a linked desktop.",
+        "es": "Las garantías pueden variar entre teléfono y PC vinculado."
+      },
+      "technical": {
+        "fr": "PFS dépend du protocole, de l’implémentation, de l’effacement et des appareils liés.",
+        "en": "PFS depends on protocol, implementation, erasure and linked devices.",
+        "es": "PFS depende de protocolo, implementación, borrado y dispositivos vinculados."
+      },
+      "behaviour": {
+        "fr": "Threema Desktop 2.0 bêta ne prend pas en charge la PFS dans le rapport.",
+        "en": "Threema Desktop 2.0 beta does not support PFS in the report.",
+        "es": "Threema Desktop 2.0 beta no admite PFS en el informe."
+      },
+      "sources": [
+        "report.definitions",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "post-compromise",
+      "title": {
+        "fr": "Sécurité après compromission",
+        "en": "Post-compromise security",
+        "es": "Seguridad poscompromiso"
+      },
+      "definition": {
+        "fr": "Une session peut retrouver sa confidentialité après un vol temporaire de son état et une évolution sûre des clés.",
+        "en": "A session can regain confidentiality after temporary state theft and safe key evolution.",
+        "es": "Una sesión puede recuperar confidencialidad tras robo temporal de su estado y evolución segura de claves."
+      },
+      "example": {
+        "fr": "Un attaquant copie l’état de session puis perd l’accès ; de nouveaux échanges peuvent renouveler la protection.",
+        "en": "An attacker copies session state then loses access; fresh exchanges may renew protection.",
+        "es": "Un atacante copia el estado y pierde el acceso; nuevos intercambios pueden renovar la protección."
+      },
+      "protects": {
+        "fr": "Certains échanges futurs après la compromission temporaire, selon le protocole.",
+        "en": "Some future exchanges after temporary compromise, depending on protocol.",
+        "es": "Algunos intercambios futuros tras compromiso temporal, según protocolo."
+      },
+      "not_protects": {
+        "fr": "Ne répare pas un téléphone encore contrôlé par un spyware.",
+        "en": "Does not repair a phone still controlled by spyware.",
+        "es": "No repara un teléfono aún controlado por spyware."
+      },
+      "why": {
+        "fr": "Distinguer récupération cryptographique et nettoyage d’un appareil.",
+        "en": "Distinguish cryptographic recovery from cleaning a device.",
+        "es": "Distinguir recuperación criptográfica y limpieza del dispositivo."
+      },
+      "technical": {
+        "fr": "La propriété dépend des échanges de clés, des hypothèses et de l’implémentation ; elle n’est pas uniforme entre tous les clients.",
+        "en": "The property depends on key exchanges, assumptions and implementation; it is not uniform across all clients.",
+        "es": "La propiedad depende de intercambios de claves, hipótesis e implementación; no es uniforme en todos los clientes."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.definitions",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "verification",
+      "title": {
+        "fr": "Vérification des clés",
+        "en": "Key verification",
+        "es": "Verificación de claves"
+      },
+      "definition": {
+        "fr": "Vérifier que la clé utilisée correspond à celle attendue pour votre contact.",
+        "en": "Check that the key used matches the key expected for your contact.",
+        "es": "Comprobar que la clave usada coincide con la esperada para el contacto."
+      },
+      "example": {
+        "fr": "Alice et Bob comparent une empreinte par un canal distinct qu’ils jugent fiable.",
+        "en": "Alice and Bob compare a fingerprint through a separate channel they trust.",
+        "es": "Alice y Bob comparan una huella por un canal independiente de confianza."
+      },
+      "protects": {
+        "fr": "Réduit certains risques de substitution de clé ou d’usurpation.",
+        "en": "Reduces some key-substitution or impersonation risks.",
+        "es": "Reduce ciertos riesgos de sustitución de clave o suplantación."
+      },
+      "not_protects": {
+        "fr": "Une clé cohérente ne certifie pas automatiquement une identité civile.",
+        "en": "A consistent key does not automatically certify civil identity.",
+        "es": "Una clave coherente no certifica automáticamente la identidad civil."
+      },
+      "why": {
+        "fr": "Chiffrer vers la mauvaise clé peut protéger le message pour la mauvaise personne.",
+        "en": "Encrypting to the wrong key can protect the message for the wrong person.",
+        "es": "Cifrar con la clave equivocada puede proteger el mensaje para la persona equivocada."
+      },
+      "technical": {
+        "fr": "Key transparency vérifie la cohérence identifiant–clé ; l’authentification humaine et les contrôles hors bande sont distincts.",
+        "en": "Key transparency checks identifier–key consistency; human authentication and out-of-band checks are separate.",
+        "es": "La transparencia de claves comprueba coherencia identificador–clave; autenticación humana y comprobaciones externas son distintas."
+      },
+      "behaviour": {
+        "fr": "En Signal username-only sans numéro du pair connu, comparer le Safety Number ; AKV n’atteste pas son identité.",
+        "en": "For Signal username-only without knowing the peer’s number, compare the Safety Number; AKV does not attest identity.",
+        "es": "Con Signal solo mediante usuario y sin conocer el número del contacto, comparar Safety Number; AKV no acredita identidad."
+      },
+      "sources": [
+        "report.definitions",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "threat-model",
+      "title": {
+        "fr": "Modèle de menace",
+        "en": "Threat model",
+        "es": "Modelo de amenaza"
+      },
+      "definition": {
+        "fr": "Préciser ce que vous protégez, contre qui, et avec quelles contraintes.",
+        "en": "Specify what you protect, from whom, and under which constraints.",
+        "es": "Precisar qué protege, frente a quién y con qué limitaciones."
+      },
+      "example": {
+        "fr": "Alice veut cacher son numéro à Bob ; une autre personne veut éviter un numéro même chez le service. Les choix diffèrent.",
+        "en": "Alice wants to hide her number from Bob; another person refuses a number even at the service. Their choices differ.",
+        "es": "Alice quiere ocultar su número a Bob; otra persona rechaza darlo incluso al servicio. Sus elecciones difieren."
+      },
+      "protects": {
+        "fr": "Rend les comparaisons et conditions de configuration utiles.",
+        "en": "Makes comparisons and configuration conditions useful.",
+        "es": "Hace útiles comparaciones y condiciones de configuración."
+      },
+      "not_protects": {
+        "fr": "Ce n’est ni une garantie, ni une note globale qui remplace les inconnues.",
+        "en": "It is neither a guarantee nor a global score replacing unknowns.",
+        "es": "No es una garantía ni una nota global que sustituya incógnitas."
+      },
+      "why": {
+        "fr": "Deux utilisateurs peuvent avoir deux bons choix sans contradiction.",
+        "en": "Two users can have different good choices without contradiction.",
+        "es": "Dos usuarios pueden tener buenas elecciones distintas sin contradicción."
+      },
+      "technical": {
+        "fr": "TM1–TM15 distinguent fournisseur, réseau, pair, autorités, appareils, supply chain et censure ; chaque cellule est relative et conditionnelle.",
+        "en": "TM1–TM15 distinguish provider, network, peer, authorities, devices, supply chain and censorship; each cell is relative and conditional.",
+        "es": "TM1–TM15 distinguen proveedor, red, contacto, autoridades, dispositivos, cadena de suministro y censura; cada celda es relativa y condicional."
+      },
+      "behaviour": null,
+      "sources": [
+        "report.threats",
+        "report.uses"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "e2ee-anonymous",
+      "title": {
+        "fr": "« E2EE veut dire anonyme. »",
+        "en": "“E2EE means anonymous.”",
+        "es": "«E2EE significa anónimo»."
+      },
+      "answer": {
+        "fr": "Le contenu et l’identification sont deux propriétés différentes. Le compte, l’IP et les horaires peuvent rester observables.",
+        "en": "Content secrecy and identification are different properties. Account, IP and timing can remain observable.",
+        "es": "El secreto del contenido y la identificación son propiedades distintas. Cuenta, IP y horarios pueden seguir observables."
+      },
+      "concept": "e2ee",
+      "sources": [
+        "report.summary",
+        "report.metadata"
+      ]
+    },
+    {
+      "id": "no-data",
+      "title": {
+        "fr": "« Le service ne lit pas mes messages, donc il ne sait rien. »",
+        "en": "“The service cannot read my messages, so it knows nothing.”",
+        "es": "«El servicio no lee mis mensajes, así que no sabe nada»."
+      },
+      "answer": {
+        "fr": "Des dates de compte, un numéro ou des connexions peuvent être utiles sans le texte. Distinguer capacité et remise réellement établie.",
+        "en": "Account dates, a number or connections can be useful without text. Distinguish capability from actually established disclosure.",
+        "es": "Fechas de cuenta, número o conexiones pueden ser útiles sin texto. Distinguir capacidad y entrega establecida."
+      },
+      "concept": "metadata",
+      "sources": [
+        "report.metadata",
+        "report.legal"
+      ]
+    },
+    {
+      "id": "tor",
+      "title": {
+        "fr": "« Avec Tor, je ne peux pas être retrouvé. »",
+        "en": "“With Tor, I cannot be traced.”",
+        "es": "«Con Tor no pueden rastrearme»."
+      },
+      "answer": {
+        "fr": "Tor réduit certaines observations locales ; pas les copies, l’identité du profil, les terminaux ou la corrélation globale.",
+        "en": "Tor reduces some local observations; not copies, profile identity, endpoints or global correlation.",
+        "es": "Tor reduce ciertas observaciones locales; no copias, identidad de perfil, dispositivos ni correlación global."
+      },
+      "concept": "network-anonymity",
+      "sources": [
+        "report.threats",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "decentralised",
+      "title": {
+        "fr": "« Décentralisé signifie privé. »",
+        "en": "“Decentralised means private.”",
+        "es": "«Descentralizado significa privado»."
+      },
+      "answer": {
+        "fr": "Les nœuds, bootstrap, DHT ou pairs peuvent voir leur portion de données. Il faut identifier les opérateurs réels.",
+        "en": "Nodes, bootstrap, DHT or peers can see their portion of data. Actual operators must be identified.",
+        "es": "Nodos, bootstrap, DHT o contactos pueden ver su parte de datos. Hay que identificar operadores reales."
+      },
+      "concept": "privacy",
+      "sources": [
+        "report.comparison"
+      ]
+    },
+    {
+      "id": "open-source",
+      "title": {
+        "fr": "« Open source signifie sûr. »",
+        "en": "“Open source means secure.”",
+        "es": "«Código abierto significa seguro»."
+      },
+      "answer": {
+        "fr": "Le code public aide l’inspection, mais ne prouve pas qu’un binaire installé lui correspond. Aucun build courant n’a été reproduit bit à bit ici.",
+        "en": "Public code helps inspection but does not prove the installed binary matches it. No current build was reproduced bit-for-bit here.",
+        "es": "El código público ayuda a inspeccionar, pero no prueba que el binario instalado corresponda. No se reprodujo ningún binario actual bit a bit aquí."
+      },
+      "concept": "security",
+      "sources": [
+        "report.audits",
+        "report.methodology"
+      ]
+    },
+    {
+      "id": "no-phone",
+      "title": {
+        "fr": "« Pas de numéro signifie anonyme. »",
+        "en": "“No phone number means anonymous.”",
+        "es": "«Sin número significa anónimo»."
+      },
+      "answer": {
+        "fr": "Cela retire un identifiant, pas l’IP, les achats, les profils réutilisés ou les habitudes.",
+        "en": "It removes one identifier, not IP, purchases, reused profiles or habits.",
+        "es": "Elimina un identificador, no IP, compras, perfiles reutilizados ni hábitos."
+      },
+      "concept": "pseudonymity",
+      "sources": [
+        "report.definitions",
+        "report.opsec"
+      ]
+    },
+    {
+      "id": "vpn",
+      "title": {
+        "fr": "« Un VPN rend la messagerie anonyme. »",
+        "en": "“A VPN makes a messenger anonymous.”",
+        "es": "«Una VPN hace anónima la mensajería»."
+      },
+      "answer": {
+        "fr": "Un VPN déplace la visibilité réseau et la confiance. Il n’efface ni le compte ni les autres canaux de corrélation. Vérifier le chemin réel.",
+        "en": "A VPN moves network visibility and trust. It removes neither the account nor other linkage channels. Check the actual path.",
+        "es": "Una VPN desplaza visibilidad y confianza. No borra la cuenta ni otros canales de vinculación. Comprobar la ruta real."
+      },
+      "concept": "network-anonymity",
+      "sources": [
+        "report.opsec",
+        "report.limits"
+      ]
+    },
+    {
+      "id": "disappearing",
+      "title": {
+        "fr": "« Messages éphémères : rien ne sera récupérable. »",
+        "en": "“Disappearing messages mean nothing can be recovered.”",
+        "es": "«Mensajes temporales: nada será recuperable»."
+      },
+      "answer": {
+        "fr": "Le contact peut copier ou photographier. Notifications, bases, sauvegardes et versions comptent ; ne pas généraliser une ancienne extraction aux correctifs actuels.",
+        "en": "The contact can copy or photograph. Notifications, databases, backups and versions matter; do not generalise an old extraction to current fixes.",
+        "es": "El contacto puede copiar o fotografiar. Importan notificaciones, bases, copias y versiones; no generalizar una extracción antigua tras correcciones."
+      },
+      "concept": "confidentiality",
+      "sources": [
+        "report.opsec",
+        "report.legal"
+      ]
+    },
+    {
+      "id": "p2p",
+      "title": {
+        "fr": "« P2P est forcément plus privé. »",
+        "en": "“P2P is necessarily more private.”",
+        "es": "«P2P es necesariamente más privado»."
+      },
+      "answer": {
+        "fr": "Moins de centralisation peut s’accompagner d’une IP révélée au pair. Le chemin des appels est distinct du chemin des messages.",
+        "en": "Less centralisation can come with IP disclosure to the peer. Calling and messaging paths are separate.",
+        "es": "Menos centralización puede implicar revelar IP al contacto. Las rutas de llamadas y mensajes son distintas."
+      },
+      "concept": "network-anonymity",
+      "sources": [
+        "report.comparison",
+        "report.metadata"
+      ]
+    },
+    {
+      "id": "audit",
+      "title": {
+        "fr": "« Un audit prouve que toute l’application est sûre. »",
+        "en": "“An audit proves the whole application is safe.”",
+        "es": "«Una auditoría prueba que toda la aplicación es segura»."
+      },
+      "answer": {
+        "fr": "Un audit est borné par sa version, sa date, ses composants et ses exclusions. Vérifier corrections et retests sans étendre le scope.",
+        "en": "An audit is bounded by version, date, components and exclusions. Check fixes and retests without extending scope.",
+        "es": "Una auditoría está acotada por versión, fecha, componentes y exclusiones. Comprobar correcciones y retests sin ampliar el ámbito."
+      },
+      "concept": "security",
+      "sources": [
+        "report.audits"
+      ]
+    },
+    {
+      "id": "police",
+      "title": {
+        "fr": "« Sans le texte, une enquête ne peut rien apprendre. »",
+        "en": "“Without the text, an investigation learns nothing.”",
+        "es": "«Sin el texto, una investigación no aprende nada»."
+      },
+      "answer": {
+        "fr": "Les données de compte, le télécom, les stores, le FAI, les appareils et les correspondants sont des sources différentes. Un cas précis ne vaut pas pour tous.",
+        "en": "Account data, telecom, stores, ISP, devices and correspondents are different sources. One case does not generalise to all.",
+        "es": "Datos de cuenta, operador, tiendas, ISP, dispositivos y contactos son fuentes distintas. Un caso no se generaliza a todos."
+      },
+      "concept": "metadata",
+      "sources": [
+        "report.legal",
+        "report.metadata"
+      ]
+    }
+  ]
+}
