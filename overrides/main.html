@@ -1,11 +1,56 @@
 {% extends "base.html" %}
+
+{% block extrahead %}
+{{ super() }}
+{% set lang = i18n_current_language if i18n_current_language is defined else 'fr' %}
+<meta name="author" content="Voldigoade">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="{{ config.site_name }}">
+<meta property="og:title" content="{{ page.meta.title or page.title }}">
+{% if page.meta.description %}<meta property="og:description" content="{{ page.meta.description }}">{% endif %}
+<meta property="og:url" content="{{ page.canonical_url }}">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": {{ (page.meta.title or page.title)|tojson }},
+  "description": {{ (page.meta.description or config.site_description)|tojson }},
+  "url": {{ page.canonical_url|tojson }},
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "inLanguage": {{ lang|tojson }},
+  "author": {
+    "@type": "Person",
+    "name": "Voldigoade",
+    "url": "https://github.com/Voldigoade"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": {{ config.site_name|tojson }},
+    "url": {{ config.site_url|tojson }}
+  },
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+}
+</script>
+{% endblock %}
+
 {% block content %}
 {{ super() }}
-<aside class="study-provenance" aria-label="Provenance de cette page">
+{% set lang = i18n_current_language if i18n_current_language is defined else 'fr' %}
+<aside class="study-provenance" aria-label="{{ 'Page provenance' if lang == 'en' else ('Procedencia de la página' if lang == 'es' else 'Provenance de cette page') }}">
+  {% if lang == 'en' %}
+  Report 1.0 · Last updated: <time datetime="2026-10-14">14 October 2026</time>.<br>
+  {% elif lang == 'es' %}
+  Informe 1.0 · Última actualización: <time datetime="2026-10-14">14 de octubre de 2026</time>.<br>
+  {% else %}
   Rapport 1.0 · Dernière mise à jour : <time datetime="2026-10-14">14 octobre 2026</time>.<br>
-  {% if page.meta.source_file %}
-  Source : <a href="{{ config.repo_url }}/blob/main/research/{{ page.meta.source_file }}#L{{ page.meta.source_line }}">{{ 'Rapport canonique' if page.meta.source_file == 'rapport-final-messageries.md' else 'Registre Phase 2' }}, ligne {{ page.meta.source_line }}</a>.
   {% endif %}
-  <a href="{{ config.repo_url }}/issues/new/choose">Signaler une information obsolète ou proposer une source</a>.
+  {% if page.meta.source_file %}
+    {% if lang == 'en' %}Source{% elif lang == 'es' %}Fuente{% else %}Source{% endif %} :
+    <a href="{{ config.repo_url }}/blob/main/research/{{ page.meta.source_file }}#L{{ page.meta.source_line }}">{{ 'Canonical report' if lang == 'en' and page.meta.source_file == 'rapport-final-messageries.md' else ('Informe canónico' if lang == 'es' and page.meta.source_file == 'rapport-final-messageries.md' else ('Rapport canonique' if page.meta.source_file == 'rapport-final-messageries.md' else 'Evidence register')) }}, {{ 'line' if lang == 'en' else ('línea' if lang == 'es' else 'ligne') }} {{ page.meta.source_line }}</a>.
+  {% endif %}
+  <a href="{{ config.repo_url }}/issues/new/choose">{% if lang == 'en' %}Report outdated information or suggest a source{% elif lang == 'es' %}Informar de información obsoleta o proponer una fuente{% else %}Signaler une information obsolète ou proposer une source{% endif %}</a>.
 </aside>
 {% endblock %}
