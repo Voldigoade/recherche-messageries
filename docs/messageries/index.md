@@ -1,32 +1,12 @@
 ---
-title: Autres messageries et fiches par produit
-description: Index des 18 messageries étudiées, avec fiches de conclusion et liens
-  vers leurs preuves détaillées.
+title: Fiches
+description: Fiches
+generated_v2: true
+editorial_source: data/messengers.json
 search:
-  boost: 2
+  boost: 3
 ---
 
-# Autres messageries et fiches par produit
+# Fiches
 
-Chaque fiche reprend la conclusion du rapport final, avec ses réserves. Les preuves détaillées sont reliées au registre Phase 2.
-
-- [Signal](signal.md)
-- [SimpleX](simplex.md)
-- [Olvid](olvid.md)
-- [Session](session.md)
-- [Threema](threema.md)
-- [Cwtch](cwtch.md)
-- [Briar](briar.md)
-- [Jami](jami.md)
-- [Tox / qTox](tox-qtox.md)
-- [Matrix / Element](matrix-element.md)
-- [XMPP / OMEMO](xmpp-omemo.md)
-- [Telegram](telegram.md)
-- [WhatsApp](whatsapp.md)
-- [Discord](discord.md)
-- [Wire](wire.md)
-- [Delta Chat](delta-chat.md)
-- [Ricochet Refresh](ricochet-refresh.md)
-- [Status / Waku](status-waku.md)
-
-Molly et Bitchat sont des candidats complémentaires, sans rang commun avec les réseaux principaux : [dossier Phase 2](../recherche/06-candidats-supplementaires-retenus-pour-examen.md).
+<ul><li><a href="/recherche-messageries/messageries/signal/">Signal</a> — Sécurité quotidienne ; pseudonymat envers le contact avec réglages renforcés.</li><li><a href="/recherche-messageries/messageries/simplex/">SimpleX</a> — Contacts pseudonymes rencontrés en ligne ; minimisation des identifiants de compte.</li><li><a href="/recherche-messageries/messageries/olvid/">Olvid</a> — Éviter de communiquer un numéro au contact ; vérifier une identité cryptographique.</li><li><a href="/recherche-messageries/messageries/session/">Session</a> — Candidat à réévaluer après preuve du correctif et retest ; pas un premier choix d’assurance élevée.</li><li><a href="/recherche-messageries/messageries/threema/">Threema</a> — Pseudonymat envers le contact sans numéro requis.</li><li><a href="/recherche-messageries/messageries/cwtch/">Cwtch</a> — Utilisateurs compatibles acceptant Tor et un outil spécialisé.</li><li><a href="/recherche-messageries/messageries/briar/">Briar</a> — Deux contacts Android quand la résilience hors réseau compte.</li><li><a href="/recherche-messageries/messageries/jami/">Jami</a> — Utilisateurs comprenant et testant les chemins P2P.</li><li><a href="/recherche-messageries/messageries/tox-qtox/">Tox / qTox</a> — Évaluation d’un client précis avec maîtrise du P2P.</li><li><a href="/recherche-messageries/messageries/matrix-element/">Matrix / Element</a> — Équipes / groupes avec serveur et clients configurés.</li><li><a href="/recherche-messageries/messageries/xmpp-omemo/">XMPP / OMEMO</a> — Utilisateurs capables de configurer et vérifier leur pile.</li><li><a href="/recherche-messageries/messageries/telegram/">Telegram</a> — Communautés sans exigence de secret du texte envers le service.</li><li><a href="/recherche-messageries/messageries/whatsapp/">WhatsApp</a> — Usage personnel si l’adoption prime sur la minimisation des métadonnées.</li><li><a href="/recherche-messageries/messageries/discord/">Discord</a> — Communautés, avec autre canal pour le texte confidentiel.</li><li><a href="/recherche-messageries/messageries/wire/">Wire</a> — Équipes acceptant le modèle de compte / service choisi.</li><li><a href="/recherche-messageries/messageries/delta-chat/">Delta Chat</a> — Priorité à la portabilité mail plutôt qu’à l’unlinkability réseau.</li><li><a href="/recherche-messageries/messageries/ricochet-refresh/">Ricochet Refresh</a> — Candidat de recherche desktop, pas choix par défaut.</li><li><a href="/recherche-messageries/messageries/status-waku/">Status / Waku</a> — Évaluation d’une version et d’un opérateur précis.</li></ul>
