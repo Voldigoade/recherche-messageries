@@ -20,14 +20,32 @@ jobs:
           cache: pip
       - name: Installer les dépendances
         run: python -m pip install -r requirements.txt
-      - name: Régénérer les pages et contrôler le contenu versionné
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Installer les outils de vérification
+        run: npm ci
+      - name: Vérifier les sources et les règles de décision
         run: |
-          python scripts/structure_docs.py
-          git diff --exit-code -- docs research/manifest.json mkdocs.yml
+          python scripts/check_catalog.py
+          npm test
+      - name: Contrôler le générateur sans remplacer les pages
+        run: python scripts/check_generated.py
       - name: Construire la documentation
         run: python -m mkdocs build --strict
       - name: Vérifier les liens, ancres et métadonnées
         run: python scripts/check_site.py
+      - name: Installer Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Vérifier le site dans le navigateur
+        run: npm run test:browser
+      - name: Conserver le diagnostic navigateur en cas d’échec
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-diagnostics
+          path: .qa/
       - name: Configurer GitHub Pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5

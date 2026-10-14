@@ -24,8 +24,9 @@ Discord text and Telegram Cloud Chats are **not** equivalent to an end-to-end en
 
 The public documentation includes:
 
-- a short decision guide for non-specialists;
-- per-messenger summaries;
+- an interactive decision guide with auditable rules and explicit limits;
+- a two-to-four messenger comparator with 39 source-linked properties;
+- 18 messenger profiles, 16 concepts, 11 misconceptions and five reading paths;
 - a TM1–TM15 threat-model matrix;
 - metadata visibility by provider, contact, ISP, Apple/Google and authorities;
 - call/IP exposure and TURN/P2P distinctions;
@@ -46,7 +47,11 @@ The reference report is [`research/rapport-final-messageries.md`](research/rappo
 
 ## Languages
 
-The full evidence base is maintained in French. A reviewed **English** guide and a shorter **Spanish** guide are provided for the main findings and recommendations. I prefer a smaller number of accurate translations over automatically publishing technical translations that may change the meaning of a security claim.
+The full evidence base is maintained in French. **English** and **Spanish** cover all 18 profiles, the learning pages, comparison tools and important methodological, audit and legal summaries. Translated summaries link explicitly to French evidence; the original dossiers retain their wording and scope.
+
+## Local verification
+
+Install Python dependencies with `python -m pip install -r requirements.txt`, then `npm ci` and `npx playwright install chromium`. Run `python scripts/check_catalog.py`, `python scripts/check_generated.py`, `npm test`, `python -m mkdocs build --strict`, `python scripts/check_site.py` and `npm run test:browser`. The generator check works in a temporary copy and does not overwrite edited pages. CI runs the same checks before publication.
 
 ## Contributing
 

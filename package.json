@@ -1,0 +1,12 @@
+{
+  "name": "secure-messaging-research-tests",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/decision.test.cjs",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.0",
+    "@axe-core/playwright": "4.13.0"
+  }
+}

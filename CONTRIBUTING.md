@@ -8,9 +8,9 @@ Utiliser les formulaires « Information obsolète » ou « Proposer une source �
 
 ## Pull requests
 
-1. Modifier la source dans `research/` ; pour la présentation, modifier CSS, templates ou configuration.
+1. Modifier la source dans `research/` pour une conclusion technique. La couche de lecture V2 est dans `data/messengers.json` et `content/learning.json` ; conserver les références et les traductions FR/EN/ES. Pour la présentation, modifier CSS, templates ou configuration.
 2. Exécuter `python scripts/structure_docs.py` pour régénérer les pages et leur manifeste.
-3. Exécuter `python -m mkdocs build --strict` et `python scripts/check_site.py`.
+3. Exécuter `python scripts/check_catalog.py`, `python scripts/check_generated.py`, `npm test`, `python -m mkdocs build --strict`, `python scripts/check_site.py` et `npm run test:browser`. Les dépendances navigateur s’installent avec `npm ci` puis `npx playwright install chromium`. Le contrôle du générateur travaille dans une copie temporaire et ne modifie pas les pages.
 4. Revoir les diffs : aucune conclusion, réserve, source ni `UNKNOWN` ne doit disparaître sans justification.
 5. Décrire le changement, le périmètre de preuve et la validation dans la pull request.
 

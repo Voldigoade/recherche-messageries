@@ -3,7 +3,11 @@
   "sourceRoots": ["docs/stylesheets", "docs/javascripts", "overrides"],
   "commands": {
     "build": "python -m mkdocs build --strict",
-    "links": "python scripts/check_site.py"
+    "links": "python scripts/check_site.py",
+    "catalog": "python scripts/check_catalog.py",
+    "generated": "python scripts/check_generated.py",
+    "unit": "npm test",
+    "browser": "npm run test:browser"
   },
-  "requiredCommands": ["build", "links"]
+  "requiredCommands": ["build", "links", "catalog", "generated", "unit", "browser"]
 }

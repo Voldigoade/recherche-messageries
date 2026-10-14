@@ -1,4 +1,6 @@
-<a href="{{ config.repo_url }}" title="Aller au dépôt GitHub" class="md-source" aria-label="Dépôt GitHub">
+{% set lang = i18n_page_locale if i18n_page_locale is defined else 'fr' %}
+{% set label = 'GitHub repository' if lang == 'en' else ('Repositorio GitHub' if lang == 'es' else 'Dépôt GitHub') %}
+<a href="{{ config.repo_url }}" title="{{ label }}" class="md-source" aria-label="{{ label }}">
   <div class="md-source__icon md-icon" aria-hidden="true">{% include ".icons/fontawesome/brands/github.svg" %}</div>
-  <div class="md-source__repository">Dépôt GitHub</div>
+  <div class="md-source__repository">{{ label }}</div>
 </a>

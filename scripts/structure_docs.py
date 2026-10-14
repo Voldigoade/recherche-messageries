@@ -12,6 +12,7 @@ import unicodedata
 from pathlib import Path
 
 import yaml
+from build_experience import generate as generate_experience
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
@@ -304,6 +305,7 @@ Modifier `research/rapport-final-messageries.md` pour la conclusion canonique et
         {"Recherche complète / Phase 2": [{"Index du registre": "recherche/index.md"}, {"Dossiers par messagerie": [{name: dest} for name, dest in phase_pages if dest in product_evidence.values()]}, {"Enquêtes transversales": [{name: dest} for name, dest in phase_pages if dest not in product_evidence.values()]}]},
         {"Le projet": [{"Rapport canonique": "rapport/index.md"}, {"Contribuer": "contribuer.md"}, {"Maintenance et domaine": "maintenance.md"}]},
     ]
+    generate_experience(DOCS, config, config["nav"])
     (ROOT / "mkdocs.yml").write_text(yaml.safe_dump(config, allow_unicode=True, sort_keys=False, width=110), encoding="utf-8")
     print(f"Generated {len(list(DOCS.rglob('*.md')))} pages from {len(manifest)} traceable sections.")
 

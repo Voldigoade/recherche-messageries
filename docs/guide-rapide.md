@@ -1,51 +1,12 @@
 ---
-title: Guide rapide — quelle messagerie choisir ?
-description: Choisir une messagerie selon le besoin réel : sécurité, pseudonymat, iPhone + PC, métadonnées, IP, groupes et contact inconnu.
+title: Guide rapide
+description: Guide rapide
+generated_v2: true
+editorial_source: data/messengers.json
 search:
-  boost: 4
+  boost: 3
 ---
 
-# Guide rapide — quelle messagerie choisir ?
+# Guide rapide
 
-Cette page est faite pour quelqu’un qui ne veut pas lire toute l’étude.
-
-Le point important : **il n’existe pas de meilleure messagerie dans l’absolu**. Le bon choix dépend surtout de ce que vous essayez de protéger et contre qui.
-
-## Réponse courte
-
-| Votre besoin principal | À regarder en premier | Pourquoi | Limite principale |
-|---|---|---|---|
-| Messagerie sûre et simple sur iPhone + PC | **Signal** | E2EE mûr, applications officielles, bonne ergonomie | Numéro toujours nécessaire à l’inscription et connu du service |
-| Parler sous un pseudonyme à quelqu’un rencontré en ligne | **SimpleX** | Pas de numéro, pas d’e-mail, pas d’identifiant utilisateur global | Les relais, le push et les appareils voient encore des métadonnées |
-| Ne pas donner son numéro au contact | **SimpleX, Threema, Olvid** | Aucun numéro n’est nécessaire pour être joint | Cela ne rend pas automatiquement anonyme sur le réseau |
-| Cacher au mieux son IP au correspondant | **SimpleX avec TURN, Olvid, Signal en mode relayé** | L’appel passe par un relais au lieu d’être direct | Le relais voit alors l’IP et la durée de la connexion |
-| Réduire l’observation réseau avec Tor | **Cwtch ou Briar** | Architecture Tor/onion | Pas de client iOS officiel établi ici ; outils spécialisés |
-| Grande équipe / serveur choisi | **Matrix / Element** | Fédération, contrôle du homeserver, groupes et multi-device | Le homeserver conserve beaucoup de métadonnées |
-| Adoption maximale auprès de proches | **Signal**, puis WhatsApp si nécessaire | Faciles à faire adopter | WhatsApp lie fortement le compte au numéro et à l’écosystème Meta |
-
-## Les cinq choses à comprendre avant de choisir
-
-1. **E2EE ne veut pas dire anonyme.** Le texte peut être illisible par le serveur alors que l’IP, les horaires, le compte ou les destinataires restent observables.
-2. **Le téléphone compte autant que l’application.** Un appareil déverrouillé, compromis ou mal sauvegardé peut exposer les messages après déchiffrement.
-3. **Les appels ont leur propre chemin réseau.** Un appel P2P peut révéler l’IP au correspondant ; TURN masque l’IP au pair mais la donne au relais.
-4. **Le pseudonyme doit être réellement séparé.** Réutiliser avatar, pseudo, e-mail, photo, fichier, style ou horaires peut relier les comptes.
-5. **Changer de Discord vers une autre app n’efface pas Discord.** Le compte d’origine, l’heure et le message d’invitation peuvent déjà former une corrélation.
-
-## Signal ou SimpleX ?
-
-**Signal** est généralement plus simple, plus mature et plus pratique sur iPhone + PC. Avec la visibilité du numéro et la découverte par numéro réglées sur `Nobody`, puis un username distinct partagé directement, le contact n’a pas besoin de connaître votre numéro. Le service Signal, lui, reçoit toujours un numéro valide lors de l’inscription.
-
-**SimpleX** est plus intéressant si l’objectif principal est de séparer des relations pseudonymes : pas de numéro obligatoire, pas d’e-mail obligatoire et pas d’identifiant utilisateur global. En contrepartie, l’écosystème, le multi-device et certains flux réseau sont moins simples à raisonner.
-
-## Et Session ?
-
-Session a un modèle d’identité et de routage intéressant, mais le rapport le rétrograde pour les usages d’assurance élevée en attendant une clarification documentée des correctifs et retests après les attaques publiées à WOOT 2026. Les appels bêta sont également P2P et peuvent révéler l’IP au correspondant.
-
-## Si vous ne savez toujours pas quoi prendre
-
-- **Usage quotidien classique : Signal.**
-- **Identité pseudonyme séparée : SimpleX.**
-- **Pas de numéro à donner : SimpleX, Threema ou Olvid.**
-- **Tor / environnement réseau hostile : Cwtch ou Briar si vos plateformes le permettent.**
-
-Ce ne sont pas des garanties absolues. Pour comprendre pourquoi, lire ensuite [le comparatif](comparatif.md), [les métadonnées](metadonnees.md) et [les threat models](threat-models.md).
+<p>Commencez par votre besoin, puis vérifiez la réserve. Ce sont des points de départ, jamais des garanties.</p><ul><li><strong>Signal</strong> — Sécurité quotidienne ; pseudonymat envers le contact avec réglages renforcés.<br>Numéro obligatoire connu du fournisseur et du télécom. <a href="/recherche-messageries/messageries/signal/">Conditions</a></li><li><strong>SimpleX</strong> — Contacts pseudonymes rencontrés en ligne ; minimisation des identifiants de compte.<br>Plus de friction multi-appareil ; relais et notifications restent à comprendre. <a href="/recherche-messageries/messageries/simplex/">Conditions</a></li><li><strong>Olvid</strong> — Éviter de communiquer un numéro au contact ; vérifier une identité cryptographique.<br>Pas d’anonymat réseau ; appels et multi-appareil sous licence. <a href="/recherche-messageries/messageries/olvid/">Conditions</a></li><li><strong>Threema</strong> — Pseudonymat envers le contact sans numéro requis.<br>Limites du desktop bêta, données de compte et achat corrélable. <a href="/recherche-messageries/messageries/threema/">Conditions</a></li></ul><p>Session reste rétrogradé pour l’assurance élevée ; Cwtch et Briar n’ont pas de client iOS officiel établi ici.</p><p><a href="/recherche-messageries/choisir/">Guide interactif</a> · <a href="/recherche-messageries/usages/">Par objectif</a></p><div class="context-help"><details><summary>Pseudonymat</summary><p>Utiliser une identité différente de votre identité civile. Elle peut toutefois être reliée à vous. <a href="/recherche-messageries/concepts/pseudonymity/">Comprendre</a></p></details><details><summary>Chiffrement de bout en bout — E2EE</summary><p>Les terminaux des participants contrôlent les clés du contenu. Le serveur de transport ne devrait pas lire les messages normaux. <a href="/recherche-messageries/concepts/e2ee/">Comprendre</a></p></details><details><summary>Anonymat réseau</summary><p>Réduire la possibilité de relier un trafic à votre adresse réseau ou à son destinataire. <a href="/recherche-messageries/concepts/network-anonymity/">Comprendre</a></p></details></div><p class="scope-note">Rapport 1.0 · 14 octobre 2026. Pas de laboratoire réseau, de tests forensiques contrôlés ni de reproduction bit à bit des binaires. Inconnu reste Inconnu.</p>

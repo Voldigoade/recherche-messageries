@@ -6,13 +6,7 @@ repo_url: https://github.com/Voldigoade/recherche-messageries
 repo_name: Dépôt GitHub
 edit_uri: edit/main/docs/
 copyright: Recherche indépendante · Rapport 1.0 · 14 octobre 2026 · CC BY-SA 4.0
-not_in_nav: '/guide-rapide.md
-
-  /guide-rapide.en.md
-
-  /guide-rapide.es.md
-
-  '
+not_in_nav: ''
 theme:
   name: material
   custom_dir: overrides
@@ -49,10 +43,71 @@ plugins:
       site_description: Independent research on secure messaging, privacy, pseudonymity, metadata and threat models.
       nav:
       - Home: index.md
-      - Quick guide: guide-rapide.md
-      - Summary: resume.md
-      - Comparison: comparatif.md
-      - Choose by use case: usages.md
+      - Choose and compare:
+        - Quick guide: guide-rapide.md
+        - Decision guide: choisir.md
+        - Compare messengers: comparer.md
+        - By use case: usages.md
+        - Reading paths: parcours.md
+        - General comparison: comparatif.md
+        - Dedicated comparisons:
+          - Signal vs SimpleX: comparaisons/signal-vs-simplex.md
+          - Signal vs Threema: comparaisons/signal-vs-threema.md
+          - SimpleX vs Session: comparaisons/simplex-vs-session.md
+          - Olvid vs Threema: comparaisons/olvid-vs-threema.md
+          - Cwtch vs Briar: comparaisons/cwtch-vs-briar.md
+          - Signal vs WhatsApp: comparaisons/signal-vs-whatsapp.md
+          - Telegram vs Signal: comparaisons/telegram-vs-signal.md
+      - Learn:
+        - Learn the concepts: concepts/index.md
+        - Common misconceptions: idees-recues.md
+        - All concepts:
+          - Encryption in transit: concepts/transit.md
+          - End-to-end encryption — E2EE: concepts/e2ee.md
+          - Confidentiality: concepts/confidentiality.md
+          - Security: concepts/security.md
+          - Privacy and data minimisation: concepts/privacy.md
+          - Metadata: concepts/metadata.md
+          - Telemetry: concepts/telemetry.md
+          - Pseudonymity: concepts/pseudonymity.md
+          - Anonymity: concepts/anonymity.md
+          - Network anonymity: concepts/network-anonymity.md
+          - Unlinkability: concepts/unlinkability.md
+          - Traffic analysis: concepts/traffic-analysis.md
+          - Forward secrecy — PFS: concepts/forward-secrecy.md
+          - Post-compromise security: concepts/post-compromise.md
+          - Key verification: concepts/verification.md
+          - Threat model: concepts/threat-model.md
+      - Messengers:
+        - Messenger profiles: messageries/index.md
+        - Signal: messageries/signal.md
+        - SimpleX: messageries/simplex.md
+        - Olvid: messageries/olvid.md
+        - Session: messageries/session.md
+        - Threema: messageries/threema.md
+        - Cwtch: messageries/cwtch.md
+        - Briar: messageries/briar.md
+        - Other messengers:
+          - Jami: messageries/jami.md
+          - Tox / qTox: messageries/tox-qtox.md
+          - Matrix / Element: messageries/matrix-element.md
+          - XMPP / OMEMO: messageries/xmpp-omemo.md
+          - Telegram: messageries/telegram.md
+          - WhatsApp: messageries/whatsapp.md
+          - Discord: messageries/discord.md
+          - Wire: messageries/wire.md
+          - Delta Chat: messageries/delta-chat.md
+          - Ricochet Refresh: messageries/ricochet-refresh.md
+          - Status / Waku: messageries/status-waku.md
+      - Verify and go deeper:
+        - Summary: resume.md
+        - Methodology: methodologie.md
+        - Threat models: threat-models.md
+        - Metadata: metadonnees.md
+        - OPSEC: opsec.md
+        - Audits: audits.md
+        - Public legal evidence: affaires.md
+        - Limitations: limites.md
     - locale: es
       name: Español
       build: true
@@ -61,10 +116,71 @@ plugins:
         y modelos de amenaza.
       nav:
       - Inicio: index.md
-      - Guía rápida: guide-rapide.md
-      - Resumen: resume.md
-      - Comparación: comparatif.md
-      - Elegir según el uso: usages.md
+      - Elegir y comparar:
+        - Guía rápida: guide-rapide.md
+        - Guía interactiva: choisir.md
+        - Comparador: comparer.md
+        - Por objetivo: usages.md
+        - Rutas de lectura: parcours.md
+        - Comparación general: comparatif.md
+        - Comparaciones específicas:
+          - Signal vs SimpleX: comparaisons/signal-vs-simplex.md
+          - Signal vs Threema: comparaisons/signal-vs-threema.md
+          - SimpleX vs Session: comparaisons/simplex-vs-session.md
+          - Olvid vs Threema: comparaisons/olvid-vs-threema.md
+          - Cwtch vs Briar: comparaisons/cwtch-vs-briar.md
+          - Signal vs WhatsApp: comparaisons/signal-vs-whatsapp.md
+          - Telegram vs Signal: comparaisons/telegram-vs-signal.md
+      - Aprender:
+        - Conceptos: concepts/index.md
+        - Ideas equivocadas: idees-recues.md
+        - Todos los conceptos:
+          - Cifrado en tránsito: concepts/transit.md
+          - Cifrado de extremo a extremo — E2EE: concepts/e2ee.md
+          - Confidencialidad: concepts/confidentiality.md
+          - Seguridad: concepts/security.md
+          - Privacidad y minimización de datos: concepts/privacy.md
+          - Metadatos: concepts/metadata.md
+          - Telemetría: concepts/telemetry.md
+          - Seudonimato: concepts/pseudonymity.md
+          - Anonimato: concepts/anonymity.md
+          - Anonimato de red: concepts/network-anonymity.md
+          - Desvinculación — unlinkability: concepts/unlinkability.md
+          - Análisis de tráfico: concepts/traffic-analysis.md
+          - Secreto hacia adelante — PFS: concepts/forward-secrecy.md
+          - Seguridad poscompromiso: concepts/post-compromise.md
+          - Verificación de claves: concepts/verification.md
+          - Modelo de amenaza: concepts/threat-model.md
+      - Mensajerías:
+        - Fichas: messageries/index.md
+        - Signal: messageries/signal.md
+        - SimpleX: messageries/simplex.md
+        - Olvid: messageries/olvid.md
+        - Session: messageries/session.md
+        - Threema: messageries/threema.md
+        - Cwtch: messageries/cwtch.md
+        - Briar: messageries/briar.md
+        - Otras mensajerías:
+          - Jami: messageries/jami.md
+          - Tox / qTox: messageries/tox-qtox.md
+          - Matrix / Element: messageries/matrix-element.md
+          - XMPP / OMEMO: messageries/xmpp-omemo.md
+          - Telegram: messageries/telegram.md
+          - WhatsApp: messageries/whatsapp.md
+          - Discord: messageries/discord.md
+          - Wire: messageries/wire.md
+          - Delta Chat: messageries/delta-chat.md
+          - Ricochet Refresh: messageries/ricochet-refresh.md
+          - Status / Waku: messageries/status-waku.md
+      - Verificar y profundizar:
+        - Resumen: resume.md
+        - Metodología: methodologie.md
+        - Modelos de amenaza: threat-models.md
+        - Metadatos: metadonnees.md
+        - OPSEC: opsec.md
+        - Auditorías: audits.md
+        - Evidencia judicial pública: affaires.md
+        - Limitaciones: limites.md
 - search:
     lang:
     - fr
@@ -84,6 +200,8 @@ extra_css:
 - stylesheets/documentation.css
 extra_javascript:
 - javascripts/tables.js
+- javascripts/decision.js
+- javascripts/tools.js
 hooks:
 - scripts/site_hooks.py
 extra:
@@ -98,18 +216,43 @@ validation:
     unrecognized_links: warn
 nav:
 - Accueil: index.md
-- Lire l’étude:
-  - Résumé: resume.md
-  - Comment lire cette étude: lecture.md
-  - Méthodologie: methodologie.md
-- Comparer:
+- Choisir et comparer:
+  - Guide rapide: guide-rapide.md
+  - Guide interactif: choisir.md
+  - Comparateur: comparer.md
+  - Par objectif: usages.md
+  - Parcours de lecture: parcours.md
   - Comparatif général: comparatif.md
-  - Plateformes et compatibilité: compatibilite.md
-  - Threat models: threat-models.md
-  - Métadonnées: metadonnees.md
-  - Choisir selon son usage: usages.md
+  - Comparaisons dédiées:
+    - Signal vs SimpleX: comparaisons/signal-vs-simplex.md
+    - Signal vs Threema: comparaisons/signal-vs-threema.md
+    - SimpleX vs Session: comparaisons/simplex-vs-session.md
+    - Olvid vs Threema: comparaisons/olvid-vs-threema.md
+    - Cwtch vs Briar: comparaisons/cwtch-vs-briar.md
+    - Signal vs WhatsApp: comparaisons/signal-vs-whatsapp.md
+    - Telegram vs Signal: comparaisons/telegram-vs-signal.md
+- Comprendre:
+  - Concepts: concepts/index.md
+  - Idées reçues: idees-recues.md
+  - Tous les concepts:
+    - Chiffrement en transit: concepts/transit.md
+    - Chiffrement de bout en bout — E2EE: concepts/e2ee.md
+    - Confidentialité: concepts/confidentiality.md
+    - Sécurité: concepts/security.md
+    - Vie privée et minimisation des données: concepts/privacy.md
+    - Métadonnées: concepts/metadata.md
+    - Télémétrie: concepts/telemetry.md
+    - Pseudonymat: concepts/pseudonymity.md
+    - Anonymat: concepts/anonymity.md
+    - Anonymat réseau: concepts/network-anonymity.md
+    - Unlinkability — séparation des liens: concepts/unlinkability.md
+    - Analyse de trafic: concepts/traffic-analysis.md
+    - Forward secrecy — PFS: concepts/forward-secrecy.md
+    - Sécurité après compromission: concepts/post-compromise.md
+    - Vérification des clés: concepts/verification.md
+    - Modèle de menace: concepts/threat-model.md
 - Messageries:
-  - Index des fiches: messageries/index.md
+  - Fiches: messageries/index.md
   - Signal: messageries/signal.md
   - SimpleX: messageries/simplex.md
   - Olvid: messageries/olvid.md
@@ -117,7 +260,7 @@ nav:
   - Threema: messageries/threema.md
   - Cwtch: messageries/cwtch.md
   - Briar: messageries/briar.md
-  - Autres messageries:
+  - Autres solutions:
     - Jami: messageries/jami.md
     - Tox / qTox: messageries/tox-qtox.md
     - Matrix / Element: messageries/matrix-element.md
@@ -129,14 +272,20 @@ nav:
     - Delta Chat: messageries/delta-chat.md
     - Ricochet Refresh: messageries/ricochet-refresh.md
     - Status / Waku: messageries/status-waku.md
-- Pratique et preuves:
-  - Discord → messagerie privée: discord-migration.md
+- Vérifier et approfondir:
+  - Résumé: resume.md
+  - Méthodologie: methodologie.md
+  - Threat models: threat-models.md
+  - Métadonnées: metadonnees.md
   - OPSEC: opsec.md
-  - Audits et vulnérabilités: audits.md
-  - Demandes judiciaires et cas publics: affaires.md
-  - Limites et inconnues: limites.md
+  - Audits: audits.md
+  - Cas publics: affaires.md
+  - Limites: limites.md
+  - Plateformes: compatibilite.md
+  - Comment lire les preuves: lecture.md
   - Sources: sources.md
   - Disponibilité des références: disponibilite-sources.md
+  - Discord → messagerie privée: discord-migration.md
 - Recherche complète / Phase 2:
   - Index du registre: recherche/index.md
   - Dossiers par messagerie:

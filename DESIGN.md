@@ -10,7 +10,9 @@ Navigation Material standard avec groupes sobres, sommaire de la page, recherche
 
 ## Comportement
 
-Liens et boutons sémantiques, focus visible, pas d’animation ajoutée. Les tableaux conservent leurs colonnes et défilent horizontalement dans une région nommée accessible au clavier. Leur largeur ne provoque pas de défilement horizontal du document. Les pages restent lisibles sans JavaScript ; la recherche utilise le moteur local Material. Le bouton d’effacement de recherche et les états vides sont ceux du thème, vérifiés dans le navigateur.
+Liens et boutons sémantiques, focus visible, pas d’animation ajoutée. Jusqu’à 1024 px, les tableaux principaux deviennent des fiches verticales avec des libellés visibles et des relations sémantiques conservées. Seules les matrices massives de plus de sept colonnes défilent dans une région nommée accessible au clavier. Leur largeur ne provoque pas de défilement horizontal du document. Les pages restent lisibles sans JavaScript ; la recherche utilise le moteur local Material. Le bouton d’effacement de recherche et les états vides sont ceux du thème, vérifiés dans le navigateur.
+
+Le comparateur et le guide utilisent les mêmes contrôles natifs et le même catalogue incorporé dans la page. Le contrat d’interaction est documenté dans `UX-CONTRACT.md`. Les réponses du guide restent en mémoire locale à la page ; seule la sélection publique du comparateur figure dans l’URL. Les disclosures utilisent `details` et `summary`, avec force, faiblesse et confiance visibles dès l’accueil. FR/EN/ES partagent la présentation et les règles.
 
 Fond blanc et contraste AA pour le texte et les liens ; zoom autorisé, réduction du mouvement et couleurs forcées respectés. Aucun backend, suivi analytique, cookie applicatif ou appel à une police externe ajouté. GitHub Pages et les liens vers les sources externes ont leurs propres politiques.
 

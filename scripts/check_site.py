@@ -52,6 +52,22 @@ def main():
                 ERRORS.append(f"{relative}: incorrect canonical")
             if len(html.select("article h1")) != 1:
                 ERRORS.append(f"{relative}: expected one article h1")
+            lang = 'en' if relative.startswith('en/') else 'es' if relative.startswith('es/') else 'fr'
+            if html.html.get('lang') != lang:
+                ERRORS.append(f"{relative}: incorrect document language")
+            article_data = html.select_one('script[type="application/ld+json"]')
+            if not article_data or json.loads(article_data.string)['inLanguage'] != lang:
+                ERRORS.append(f"{relative}: incorrect JSON-LD language")
+            alternates = {n['hreflang']: urljoin(page_url, n['href']) for n in html.select('link[rel="alternate"][hreflang]')}
+            if not alternates or alternates.get(lang) != page_url:
+                ERRORS.append(f"{relative}: missing self hreflang")
+            for alternate_lang, alternate_url in alternates.items():
+                target = resolve(alternate_url)
+                if target and target.is_file():
+                    other = soup(target)
+                    back = other.select_one(f'link[rel="alternate"][hreflang="{lang}"]')
+                    if not back or urljoin(alternate_url, back['href']) != page_url:
+                        ERRORS.append(f"{relative}: hreflang not reciprocal for {alternate_lang}")
         for node in html.select("a[href], link[href], script[src], img[src]"):
             href = node.get("href", node.get("src", ""))
             if not href or href.startswith(("mailto:", "data:", "javascript:")):
@@ -83,10 +99,20 @@ def main():
                 ERRORS.append(f"sitemap: missing target {node.text}")
     if f"Sitemap: {BASE.rstrip('/')}/sitemap.xml" not in (SITE / "robots.txt").read_text(encoding="utf-8"):
         ERRORS.append("robots.txt: incorrect sitemap URL")
+    if 'User-agent: OAI-SearchBot\nAllow: /' not in (SITE / 'robots.txt').read_text(encoding='utf-8'):
+        ERRORS.append('OAI-SearchBot must remain allowed')
     index = json.loads((SITE / "search" / "search_index.json").read_text(encoding="utf-8"))
     if len(index["docs"]) < 60:
         ERRORS.append("incomplete search index")
     manifest = json.loads((ROOT / "research" / "manifest.json").read_text(encoding="utf-8"))
+    required = ['index','guide-rapide','choisir','comparer','comparatif','usages','idees-recues','opsec','methodologie','limites','audits','affaires','metadonnees','threat-models','resume']
+    for lang in ('fr','en','es'):
+        prefix = '' if lang == 'fr' else lang+'/'
+        for name in required:
+            target = SITE / (prefix+('index.html' if name=='index' else name+'/index.html'))
+            if not target.is_file(): ERRORS.append(f'missing V2 translation: {lang} {name}')
+        for m in json.loads((ROOT/'data/messengers.json').read_text(encoding='utf-8'))['messengers']:
+            if not (SITE/(prefix+'messageries/'+m['id']+'/index.html')).is_file(): ERRORS.append(f'missing profile: {lang} {m["id"]}')
     for name, digest in manifest["sha256"].items():
         if hashlib.sha256((ROOT / "research" / name).read_bytes()).hexdigest() != digest:
             ERRORS.append(f"source checksum mismatch: {name}")
