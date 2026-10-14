@@ -1,0 +1,25 @@
+name: Information obsolète ou incorrecte
+description: Signaler une affirmation à revoir avec sa source et son périmètre.
+title: "[Mise à jour] "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page concernée
+      description: URL et section précise.
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Affirmation et correction proposée
+      description: Distinguer le fait établi, la déclaration et les inconnues.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources, date et périmètre
+      description: URL primaire, date, version, plateforme, configuration et limites.
+    validations:
+      required: true

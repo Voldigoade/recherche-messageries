@@ -1,0 +1,7 @@
+{% extends "main.html" %}
+{% block htmltitle %}<title>Page introuvable — {{ config.site_name }}</title>{% endblock %}
+{% block content %}
+<h1>Page introuvable</h1>
+<p>Cette adresse ne correspond pas à une page publiée. Utilisez la recherche ou la navigation pour retrouver le sujet.</p>
+<p><a href="{{ config.site_url }}">Revenir à l’accueil</a></p>
+{% endblock %}

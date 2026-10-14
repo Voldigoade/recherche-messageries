@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+{{ super() }}
+<aside class="study-provenance" aria-label="Provenance de cette page">
+  Rapport 1.0 · Dernière mise à jour : <time datetime="2026-10-14">14 octobre 2026</time>.<br>
+  {% if page.meta.source_file %}
+  Source : <a href="{{ config.repo_url }}/blob/main/research/{{ page.meta.source_file }}#L{{ page.meta.source_line }}">{{ 'Rapport canonique' if page.meta.source_file == 'rapport-final-messageries.md' else 'Registre Phase 2' }}, ligne {{ page.meta.source_line }}</a>.
+  {% endif %}
+  <a href="{{ config.repo_url }}/issues/new/choose">Signaler une information obsolète ou proposer une source</a>.
+</aside>
+{% endblock %}

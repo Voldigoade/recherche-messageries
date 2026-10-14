@@ -1,0 +1,153 @@
+{
+  "date_fr": "14 octobre 2026",
+  "checked_at": "2026-10-14T00:00:59.771822+00:00",
+  "total": 476,
+  "available": 447,
+  "issues": [
+    {
+      "url": "https://app.midpage.ai/document/united-states-v-bryant-1000161304572",
+      "status": 429,
+      "destination": "https://app.midpage.ai/document/united-states-v-bryant-1000161304572"
+    },
+    {
+      "url": "https://cyber.gouv.fr/sites/default/files/document/2020-09-18%20Rapport%20de%20certification%20ANSSI%20Olvid-0.8.2%20iOS.pdf",
+      "status": 404,
+      "destination": "https://cyber.gouv.fr/sites/default/files/document/2020-09-18%20Rapport%20de%20certification%20ANSSI%20Olvid-0.8.2%20iOS.pdf"
+    },
+    {
+      "url": "https://dhccaseinfo.nic.in/jupload/dhc/PMS/judgement/31-08-2022/PMS30082022SC2822020_121640.pdf",
+      "status": "unverified",
+      "error": "ReadTimeout"
+    },
+    {
+      "url": "https://doi.org/10.3929/ethz-b-000673362",
+      "status": 500,
+      "destination": "https://www.research-collection.ethz.ch/handle/20.500.11850/673362"
+    },
+    {
+      "url": "https://eprint.iacr.org/2016/1013",
+      "status": 403,
+      "destination": "https://eprint.iacr.org/2016/1013"
+    },
+    {
+      "url": "https://eprint.iacr.org/2023/1087",
+      "status": 403,
+      "destination": "https://eprint.iacr.org/2023/1087"
+    },
+    {
+      "url": "https://eprint.iacr.org/2026/1622",
+      "status": 403,
+      "destination": "https://eprint.iacr.org/2026/1622"
+    },
+    {
+      "url": "https://eprint.iacr.org/2026/773",
+      "status": 403,
+      "destination": "https://eprint.iacr.org/2026/773"
+    },
+    {
+      "url": "https://git.openprivacy.ca/cwtch.im/cwtch",
+      "status": 403,
+      "destination": "https://git.openprivacy.ca/cwtch.im/cwtch"
+    },
+    {
+      "url": "https://git.openprivacy.ca/cwtch.im/cwtch-ui",
+      "status": 403,
+      "destination": "https://git.openprivacy.ca/cwtch.im/cwtch-ui"
+    },
+    {
+      "url": "https://github.com/iNPUTmice/Conversations",
+      "status": 404,
+      "destination": "https://github.com/iNPUTmice/Conversations"
+    },
+    {
+      "url": "https://github.com/session-foundation/session-android/blob/2a6f7bb80bb2fd8e58c96c5765804050bb1d39d8/app/src/main/AndroidManifest.xml",
+      "status": 404,
+      "destination": "https://github.com/session-foundation/session-android/blob/2a6f7bb80bb2fd8e58c96c5765804050bb1d39d8/app/src/main/AndroidManifest.xml"
+    },
+    {
+      "url": "https://github.com/signalapp/Signal-Android/blob/8e112cffb471d4dd045d745dccd9e8f0ecee319c/app/src/main/AndroidManifest.xml",
+      "status": 404,
+      "destination": "https://github.com/signalapp/Signal-Android/blob/8e112cffb471d4dd045d745dccd9e8f0ecee319c/app/src/main/AndroidManifest.xml"
+    },
+    {
+      "url": "https://github.com/simplex-chat/simplex-chat/blob/64d7a03cf75bd7de51b99899ed02f8c14e25e063/apps/multiplatform/android/src/main/AndroidManifest.xml",
+      "status": 404,
+      "destination": "https://github.com/simplex-chat/simplex-chat/blob/64d7a03cf75bd7de51b99899ed02f8c14e25e063/apps/multiplatform/android/src/main/AndroidManifest.xml"
+    },
+    {
+      "url": "https://github.com/threema-ch/threema-android/blob/128bfac3c6cb0c136d5f0895c14e2566680b267d/app/src/main/AndroidManifest.xml",
+      "status": 404,
+      "destination": "https://github.com/threema-ch/threema-android/blob/128bfac3c6cb0c136d5f0895c14e2566680b267d/app/src/main/AndroidManifest.xml"
+    },
+    {
+      "url": "https://indiankanoon.org/doc/119238688/",
+      "status": 403,
+      "destination": "https://indiankanoon.org/doc/119238688/"
+    },
+    {
+      "url": "https://indiankanoon.org/doc/2402568/",
+      "status": 403,
+      "destination": "https://indiankanoon.org/doc/2402568/"
+    },
+    {
+      "url": "https://simplex.chat/docs/guide/introduction/",
+      "status": 404,
+      "destination": "https://simplex.chat/docs/guide/introduction/"
+    },
+    {
+      "url": "https://simplex.chat/docs/guide/reproducible-builds.html",
+      "status": 404,
+      "destination": "https://simplex.chat/docs/guide/reproducible-builds.html"
+    },
+    {
+      "url": "https://status.app/technology/",
+      "status": 404,
+      "destination": "https://status.app/technology"
+    },
+    {
+      "url": "https://techcrunch.com/2024/05/08/encrypted-services-apple-proton-and-wire-helped-identify-activist/",
+      "status": 404,
+      "destination": "https://techcrunch.com/2024/05/08/encrypted-services-apple-proton-and-wire-helped-identify-activist/"
+    },
+    {
+      "url": "https://threema.com/assets/8-press/2026-04-20-threema-cryptography-whitepaper.pdf",
+      "status": 404,
+      "destination": "https://threema.com/assets/8-press/2026-04-20-threema-cryptography-whitepaper.pdf"
+    },
+    {
+      "url": "https://www.404media.co/fbi-extracts-suspects-deleted-signal-messages-saved-in-iphone-notification-database/",
+      "status": 404,
+      "destination": "https://www.404media.co/fbi-extracts-suspects-deleted-signal-messages-saved-in-iphone-notification-database/"
+    },
+    {
+      "url": "https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F29-04-2021-2C_544-2020&lang=de&type=show_document",
+      "status": "unverified",
+      "error": "SSLError"
+    },
+    {
+      "url": "https://www.cellebrite.com/en/blog/cellebrites-new-solution-for-decrypting-the-signal-app/",
+      "status": 403,
+      "destination": "https://www.cellebrite.com/en/blog/cellebrites-new-solution-for-decrypting-the-signal-app/"
+    },
+    {
+      "url": "https://www.europol.europa.eu/media-press/newsroom/news/international-operation-takes-down-another-encrypted-messaging-service-used-criminals",
+      "status": "unverified",
+      "error": "ConnectionError"
+    },
+    {
+      "url": "https://www.politie.nl/headless-api/nieuws/2024/december/3/11-opnieuw-versleutelde-communicatiedienst-criminelen-ontmanteld.html",
+      "status": 403,
+      "destination": "https://www.politie.nl/headless-api/nieuws/2024/december/3/11-opnieuw-versleutelde-communicatiedienst-criminelen-ontmanteld.html"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2140143/000214014326000002/simplexchatformcoriginal3.pdf",
+      "status": 403,
+      "destination": "https://www.sec.gov/Archives/edgar/data/2140143/000214014326000002/simplexchatformcoriginal3.pdf"
+    },
+    {
+      "url": "https://www.usenix.org/system/files/woot25-moratti.pdf",
+      "status": 404,
+      "destination": "https://www.usenix.org/system/files/woot25-moratti.pdf"
+    }
+  ]
+}

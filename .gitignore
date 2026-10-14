@@ -1,0 +1,8 @@
+.venv/
+site/
+__pycache__/
+*.pyc
+.qa/
+.playwright-mcp/
+.DS_Store
+node_modules/

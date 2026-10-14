@@ -1,0 +1,430 @@
+{
+  "version": "1.0",
+  "date": "2026-10-14",
+  "sha256": {
+    "rapport-final-messageries.md": "1d59046d7ede09234fc5a6b8986df76fc2cd480d652b87fe3802fe8d302e523c",
+    "enquete-messageries-progress.md": "574a7f7cb19775469f99076cd23ecbedc6d68672bbbcd2c8e1d8152788eec518"
+  },
+  "sections": [
+    {
+      "page": "resume.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 8,
+      "end_line": 24
+    },
+    {
+      "page": "lecture.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 25,
+      "end_line": 45
+    },
+    {
+      "page": "methodologie.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 46,
+      "end_line": 57
+    },
+    {
+      "page": "compatibilite.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 58,
+      "end_line": 84
+    },
+    {
+      "page": "comparatif.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 85,
+      "end_line": 107
+    },
+    {
+      "page": "threat-models.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 108,
+      "end_line": 141
+    },
+    {
+      "page": "metadonnees.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 142,
+      "end_line": 178
+    },
+    {
+      "page": "audits.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 179,
+      "end_line": 207
+    },
+    {
+      "page": "affaires.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 208,
+      "end_line": 223
+    },
+    {
+      "page": "messageries/signal.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 228,
+      "end_line": 231
+    },
+    {
+      "page": "messageries/simplex.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 232,
+      "end_line": 235
+    },
+    {
+      "page": "messageries/olvid.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 236,
+      "end_line": 239
+    },
+    {
+      "page": "messageries/session.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 240,
+      "end_line": 243
+    },
+    {
+      "page": "messageries/threema.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 244,
+      "end_line": 247
+    },
+    {
+      "page": "messageries/cwtch.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 248,
+      "end_line": 251
+    },
+    {
+      "page": "messageries/briar.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 252,
+      "end_line": 255
+    },
+    {
+      "page": "messageries/jami.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 256,
+      "end_line": 259
+    },
+    {
+      "page": "messageries/tox-qtox.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 260,
+      "end_line": 263
+    },
+    {
+      "page": "messageries/matrix-element.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 264,
+      "end_line": 267
+    },
+    {
+      "page": "messageries/xmpp-omemo.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 268,
+      "end_line": 271
+    },
+    {
+      "page": "messageries/telegram.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 272,
+      "end_line": 275
+    },
+    {
+      "page": "messageries/whatsapp.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 276,
+      "end_line": 279
+    },
+    {
+      "page": "messageries/discord.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 280,
+      "end_line": 283
+    },
+    {
+      "page": "messageries/wire.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 284,
+      "end_line": 287
+    },
+    {
+      "page": "messageries/delta-chat.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 288,
+      "end_line": 291
+    },
+    {
+      "page": "messageries/ricochet-refresh.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 292,
+      "end_line": 295
+    },
+    {
+      "page": "messageries/status-waku.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 296,
+      "end_line": 299
+    },
+    {
+      "page": "usages.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 300,
+      "end_line": 348
+    },
+    {
+      "page": "discord-migration.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 349,
+      "end_line": 362
+    },
+    {
+      "page": "opsec.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 363,
+      "end_line": 396
+    },
+    {
+      "page": "limites.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 397,
+      "end_line": 425
+    },
+    {
+      "page": "sources.md",
+      "source": "rapport-final-messageries.md",
+      "start_line": 426,
+      "end_line": 470
+    },
+    {
+      "page": "recherche/01-synthese-anterieure-phase-1-conservee-comme-repere.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 5,
+      "end_line": 20
+    },
+    {
+      "page": "recherche/02-methodologie.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 21,
+      "end_line": 30
+    },
+    {
+      "page": "recherche/03-definitions-utiles.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 31,
+      "end_line": 39
+    },
+    {
+      "page": "recherche/04-candidats-et-lecture-du-rapport.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 40,
+      "end_line": 45
+    },
+    {
+      "page": "recherche/05-appels-webrtc-voip-et-exposition-dadresse-ip.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 46,
+      "end_line": 69
+    },
+    {
+      "page": "recherche/06-candidats-supplementaires-retenus-pour-examen.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 70,
+      "end_line": 95
+    },
+    {
+      "page": "recherche/07-divulgations-legales-et-cas-concrets-faits-obtenus-pas-seulement-capacites.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 96,
+      "end_line": 153
+    },
+    {
+      "page": "recherche/08-forensics-publics-resultats-bornes-par-plateforme-os-version-et-date.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 154,
+      "end_line": 167
+    },
+    {
+      "page": "recherche/09-audits-simplex-ecarts-de-perimetre-et-etat-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 168,
+      "end_line": 179
+    },
+    {
+      "page": "recherche/10-censure-ce-que-les-mesures-publiques-permettent-reellement-daffirmer.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 180,
+      "end_line": 188
+    },
+    {
+      "page": "recherche/11-elements-probatoires-a-preserver-dans-la-matrice-globale.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 189,
+      "end_line": 199
+    },
+    {
+      "page": "recherche/12-contradictions-et-distinctions-de-perimetre-a-conserver-dans-les-matrices.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 200,
+      "end_line": 207
+    },
+    {
+      "page": "recherche/13-experiences-sures-qui-apporteront-une-preuve-superieure.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 208,
+      "end_line": 211
+    },
+    {
+      "page": "recherche/14-mobile-privacy-declarations-de-magasins-controle-ponctuel-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 212,
+      "end_line": 265
+    },
+    {
+      "page": "recherche/15-depots-publics-activite-observee-echantillon-borne-pas-audit-exhaustif.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 266,
+      "end_line": 301
+    },
+    {
+      "page": "recherche/16-osint-dinfrastructure-limite-de-la-collecte-actuelle.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 302,
+      "end_line": 332
+    },
+    {
+      "page": "recherche/17-audits-lus-en-detail-briar-threema-et-delta-chat.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 333,
+      "end_line": 431
+    },
+    {
+      "page": "recherche/18-signal-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 432,
+      "end_line": 536
+    },
+    {
+      "page": "recherche/19-simplex-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 537,
+      "end_line": 632
+    },
+    {
+      "page": "recherche/20-olvid-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 633,
+      "end_line": 747
+    },
+    {
+      "page": "recherche/21-delta-chat-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 748,
+      "end_line": 840
+    },
+    {
+      "page": "recherche/22-etat-daudit-delta-chat-distinction-probatoire.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 841,
+      "end_line": 844
+    },
+    {
+      "page": "recherche/23-briar-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 845,
+      "end_line": 926
+    },
+    {
+      "page": "recherche/24-session-dossier-de-preuves-approfondi-complement-etat-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 927,
+      "end_line": 1067
+    },
+    {
+      "page": "recherche/25-threema-dossier-probatoire-approfondi-etat-documentaire-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 1068,
+      "end_line": 1199
+    },
+    {
+      "page": "recherche/26-wire-dossier-de-preuves-individuel-reference-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 1200,
+      "end_line": 1345
+    },
+    {
+      "page": "recherche/27-matrix-element-dossier-de-preuves-individuel-reference-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 1346,
+      "end_line": 1512
+    },
+    {
+      "page": "recherche/28-cwtch-dossier-de-preuves-situation-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 1513,
+      "end_line": 1596
+    },
+    {
+      "page": "recherche/29-jami-dossier-de-preuves-situation-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 1597,
+      "end_line": 1692
+    },
+    {
+      "page": "recherche/30-tox-qtox-dossier-de-preuves-situation-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 1693,
+      "end_line": 1776
+    },
+    {
+      "page": "recherche/31-ricochet-refresh-dossier-de-preuves-situation-au-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 1777,
+      "end_line": 1876
+    },
+    {
+      "page": "recherche/32-xmpp-omemo-dossier-individuel-dinvestigation-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 1877,
+      "end_line": 1938
+    },
+    {
+      "page": "recherche/33-telegram-dossier-individuel-dinvestigation-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 1939,
+      "end_line": 1999
+    },
+    {
+      "page": "recherche/34-whatsapp-dossier-individuel-dinvestigation-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 2000,
+      "end_line": 2104
+    },
+    {
+      "page": "recherche/35-discord-dossier-individuel-dinvestigation-13-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 2105,
+      "end_line": 2255
+    },
+    {
+      "page": "recherche/36-matrice-transversale-tm1tm15-synthese-18-solutions.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 2256,
+      "end_line": 2281
+    },
+    {
+      "page": "recherche/37-contradictions-materielles-inconnues-restantes-et-essais-necessaires.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 2282,
+      "end_line": 2341
+    },
+    {
+      "page": "recherche/38-dossier-de-preuve-complementaire-status-app-waku-au-14-octobre-2026.md",
+      "source": "enquete-messageries-progress.md",
+      "start_line": 2342,
+      "end_line": 2442
+    }
+  ]
+}

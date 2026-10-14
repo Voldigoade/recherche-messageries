@@ -1,0 +1,25 @@
+---
+title: Demandes judiciaires et cas publics
+description: Remises observées, rapports de transparence et distinction entre capacité
+  technique et production réelle.
+search:
+  boost: 2
+source_file: rapport-final-messageries.md
+source_line: 208
+---
+
+# Demandes judiciaires et cas publics
+
+| Service / cas | Donnée effectivement obtenue ou remise établie | Ce que cela ne prouve pas |
+|---|---|---|
+| **Signal, D.C. subpoena, 6 mars 2026** | La réponse Signal indique 37 numéros ciblés : 7 sans compte, 30 comptes existants; dates de création/dernière connexion communiquées pour 6, rien de responsive pour 24 sur la période. [Réponse et documents](https://signal.org/bigbrother/district-of-columbia/) | Aucun contenu de message remis; ne couvre pas téléphone saisi, FAI, store ou participant. C’est la réponse fournisseur publiée, non une mesure universelle de rétention. |
+| **Signal, extraction iOS rapportée en 2026** | Presse spécialisée rapporte qu’un témoignage FBI a montré des aperçus de messages entrants Signal, y compris messages expirés/suppression app, conservés dans la base des notifications iOS. [404 Media](https://www.404media.co/fbi-extracts-suspects-deleted-signal-messages-saved-in-iphone-notification-database/) | Modèle iPhone, version iOS/app, état verrouillé et outil exact non disponibles dans la pièce publique consultée; Apple a documenté le correctif iOS/iPadOS 26.4.2 pour CVE-2026-28950. Ne pas présenter l’ancien résultat comme une capacité actuelle post-correctif. [Apple](https://support.apple.com/en-us/127002) |
+| **SimpleX, transparence 2025** | L’opérateur déclare 12 demandes policières sans information responsive fournie. [Rapport](https://simplex.chat/transparency/) | Déclaration agrégée de fournisseur; pas de pièces judiciaires ni audit indépendant des données de chaque relais. |
+| **Threema, transparency report 2025 et premier semestre 2026** | Le rapport indique 423 demandes en 2025, 402 affaires avec données pour 1 505 IDs; il décrit des données limitées (jours de création/dernière connexion et éléments facultatifs hash téléphone/e-mail ou push token). Pour le premier semestre 2026, 444 demandes et 438 affaires avec données pour 2 026 IDs sont rapportées. [Rapport](https://threema.com/en/transparency-report) | Chiffres et catégories agrégés auto-déclarés; ne démontrent pas de remise de contenus ou les champs d’un dossier précis. |
+| **Threema, U.S. v. Wedding, 2025** | L’acte d’accusation relate conversations/groupes et un appel Threema. [DOJ](https://www.justice.gov/opa/media/1418931/dl?inline=) | Le document ne dit pas que Threema AG a remis ces messages; l’obtention peut passer par participant/témoin/appareil. |
+| **Telegram, ordonnance Delhi High Court, 2022–2023** | Production de données à la Cour sous pli scellé; ordonnance décrit un tableau comportant des noms d’administrateurs, téléphones et IP de certains canaux. Une déclaration ultérieure des demandeurs parle de données plus limitées; valeurs sous scellés. [Ordonnance](https://indiankanoon.org/doc/119238688/), [suivi](https://indiankanoon.org/doc/2402568/) | Affaire civile de copyright, pas preuve que la police a effectivement reçu toutes les catégories; les pièces rendent la portée partiellement contradictoire. |
+| **Discord, U.S. v. Bryant, 2020** | Opinion judiciaire décrit la remise à la police de données de compte, IP, device ID, e-mail, messages, images et données liées à VoIP sous mandat. [Décision](https://app.midpage.ai/document/united-states-v-bryant-1000161304572) | Cas particulier, juridiction et warrant précis; ne mesure pas tous les champs ni toute rétention actuelle. |
+| **Wire, enquête Tsunami Democràtic, 2024** | Wire a confirmé avoir fourni des informations de compte de base, dont l’e-mail d’inscription, relayé dans une enquête ayant ensuite sollicité d’autres prestataires. [TechCrunch avec confirmation Wire](https://techcrunch.com/2024/05/08/encrypted-services-apple-proton-and-wire-helped-spanish-police-identify-activist/) | Pas de preuve de remise du corps des messages Wire. |
+| **Matrix.org / autres** | Matrix.org publie un guide d’application de la loi; aucun dossier public consulté n’établit les données effectivement transmises par Matrix.org. Les autres homeservers sont des entités distinctes. | L’absence de cas trouvé n’établit pas une absence de demandes, d’ordres secrets ou de productions. Même limite pour Olvid, Briar, Cwtch, Jami, Tox, Ricochet Refresh, Status, Delta Chat et les autres services sans dossier concret retrouvé dans cette recherche. |
+
+**Conclusion juridique :** la meilleure protection contre une réquisition d’un fournisseur est de minimiser ce que l’opérateur détient, mais cela ne couvre ni l’opérateur téléphonique, l’hébergeur/relay, Apple/Google, les sauvegardes, les appareils, les interlocuteurs ni les données d’un compte Discord d’origine. La juridiction du fournisseur n’efface pas une donnée effectivement détenue ou accessible ailleurs. Les mécanismes européens et nationaux varient et nécessiteraient une analyse juridique pays par pays; ce rapport ne donne pas de conseil juridique.

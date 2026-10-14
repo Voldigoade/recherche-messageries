@@ -1,0 +1,24 @@
+name: Proposer une source
+description: Ajouter une preuve primaire ou indépendante à la recherche.
+title: "[Source] "
+body:
+  - type: input
+    id: url
+    attributes:
+      label: URL de la source
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Nature et périmètre de la preuve
+      description: Auteur, date, produit, versions, scope, exclusions et indépendance.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Conclusion ou inconnue concernée
+      description: Indiquer la page et ce que cette preuve permet réellement de conclure.
+    validations:
+      required: true

@@ -1,0 +1,143 @@
+site_name: Étude des messageries
+site_description: Recherche indépendante sur la sécurité, la vie privée et le pseudonymat des messageries.
+site_url: https://voldigoade.github.io/recherche-messageries/
+repo_url: https://github.com/Voldigoade/recherche-messageries
+repo_name: Dépôt GitHub
+edit_uri: edit/main/docs/
+copyright: Recherche indépendante · Rapport 1.0 · 14 octobre 2026 · CC BY-SA 4.0
+theme:
+  name: material
+  custom_dir: overrides
+  language: fr
+  font: false
+  logo: assets/favicon.svg
+  favicon: assets/favicon.svg
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  features:
+  - navigation.sections
+  - navigation.indexes
+  - navigation.path
+  - navigation.footer
+  - search.highlight
+  - content.action.edit
+plugins:
+- search:
+    lang:
+    - fr
+    - en
+markdown_extensions:
+- admonition
+- attr_list
+- tables
+- footnotes
+- toc:
+    permalink: true
+    permalink_title: Lien vers cette section
+    toc_depth: 3
+- pymdownx.superfences
+extra_css:
+- stylesheets/documentation.css
+extra_javascript:
+- javascripts/tables.js
+hooks:
+- scripts/site_hooks.py
+extra:
+  generator: false
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+    anchors: warn
+    unrecognized_links: warn
+nav:
+- Accueil: index.md
+- Lire l’étude:
+  - Résumé: resume.md
+  - Comment lire cette étude: lecture.md
+  - Méthodologie: methodologie.md
+- Comparer:
+  - Comparatif général: comparatif.md
+  - Plateformes et compatibilité: compatibilite.md
+  - Threat models: threat-models.md
+  - Métadonnées: metadonnees.md
+  - Choisir selon son usage: usages.md
+- Messageries:
+  - Index des fiches: messageries/index.md
+  - Signal: messageries/signal.md
+  - SimpleX: messageries/simplex.md
+  - Olvid: messageries/olvid.md
+  - Session: messageries/session.md
+  - Threema: messageries/threema.md
+  - Cwtch: messageries/cwtch.md
+  - Briar: messageries/briar.md
+  - Autres messageries:
+    - Jami: messageries/jami.md
+    - Tox / qTox: messageries/tox-qtox.md
+    - Matrix / Element: messageries/matrix-element.md
+    - XMPP / OMEMO: messageries/xmpp-omemo.md
+    - Telegram: messageries/telegram.md
+    - WhatsApp: messageries/whatsapp.md
+    - Discord: messageries/discord.md
+    - Wire: messageries/wire.md
+    - Delta Chat: messageries/delta-chat.md
+    - Ricochet Refresh: messageries/ricochet-refresh.md
+    - Status / Waku: messageries/status-waku.md
+- Pratique et preuves:
+  - Discord → messagerie privée: discord-migration.md
+  - OPSEC: opsec.md
+  - Audits et vulnérabilités: audits.md
+  - Demandes judiciaires et cas publics: affaires.md
+  - Limites et inconnues: limites.md
+  - Sources: sources.md
+  - Disponibilité des références: disponibilite-sources.md
+- Recherche complète / Phase 2:
+  - Index du registre: recherche/index.md
+  - Dossiers par messagerie:
+    - Signal — dossier probatoire approfondi (état au 13 octobre 2026): recherche/18-signal-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md
+    - SimpleX — dossier probatoire approfondi (état au 13 octobre 2026): recherche/19-simplex-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md
+    - Olvid — dossier probatoire approfondi (état au 13 octobre 2026): recherche/20-olvid-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md
+    - Delta Chat — dossier probatoire approfondi (état au 13 octobre 2026): recherche/21-delta-chat-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md
+    - Briar — dossier probatoire approfondi (état au 13 octobre 2026): recherche/23-briar-dossier-probatoire-approfondi-etat-au-13-octobre-2026.md
+    - Session — dossier de preuves approfondi (complément, état au 13 octobre 2026): recherche/24-session-dossier-de-preuves-approfondi-complement-etat-au-13-octobre-2026.md
+    - Threema — dossier probatoire approfondi (état documentaire au 13 octobre 2026): recherche/25-threema-dossier-probatoire-approfondi-etat-documentaire-au-13-octobre-2026.md
+    - 'Wire — dossier de preuves individuel (référence : 13 octobre 2026)': recherche/26-wire-dossier-de-preuves-individuel-reference-13-octobre-2026.md
+    - 'Matrix / Element — dossier de preuves individuel (référence : 13 octobre 2026)': recherche/27-matrix-element-dossier-de-preuves-individuel-reference-13-octobre-2026.md
+    - Cwtch — dossier de preuves (situation au 13 octobre 2026): recherche/28-cwtch-dossier-de-preuves-situation-au-13-octobre-2026.md
+    - Jami — dossier de preuves (situation au 13 octobre 2026): recherche/29-jami-dossier-de-preuves-situation-au-13-octobre-2026.md
+    - Tox / qTox — dossier de preuves (situation au 13 octobre 2026): recherche/30-tox-qtox-dossier-de-preuves-situation-au-13-octobre-2026.md
+    - Ricochet Refresh — dossier de preuves (situation au 13 octobre 2026): recherche/31-ricochet-refresh-dossier-de-preuves-situation-au-13-octobre-2026.md
+    - XMPP / OMEMO — dossier individuel d’investigation (13 octobre 2026): recherche/32-xmpp-omemo-dossier-individuel-dinvestigation-13-octobre-2026.md
+    - Telegram — dossier individuel d’investigation (13 octobre 2026): recherche/33-telegram-dossier-individuel-dinvestigation-13-octobre-2026.md
+    - WhatsApp — dossier individuel d’investigation (13 octobre 2026): recherche/34-whatsapp-dossier-individuel-dinvestigation-13-octobre-2026.md
+    - Discord — dossier individuel d’investigation (13 octobre 2026): recherche/35-discord-dossier-individuel-dinvestigation-13-octobre-2026.md
+    - Dossier de preuve complémentaire — Status App / Waku (au 14 octobre 2026): recherche/38-dossier-de-preuve-complementaire-status-app-waku-au-14-octobre-2026.md
+  - Enquêtes transversales:
+    - Synthèse antérieure — Phase 1 conservée comme repère: recherche/01-synthese-anterieure-phase-1-conservee-comme-repere.md
+    - Méthodologie: recherche/02-methodologie.md
+    - Définitions utiles: recherche/03-definitions-utiles.md
+    - Candidats et lecture du rapport: recherche/04-candidats-et-lecture-du-rapport.md
+    - Appels WebRTC/VoIP et exposition d’adresse IP: recherche/05-appels-webrtc-voip-et-exposition-dadresse-ip.md
+    - Candidats supplémentaires retenus pour examen: recherche/06-candidats-supplementaires-retenus-pour-examen.md
+    - Divulgations légales et cas concrets — faits obtenus, pas seulement capacités: recherche/07-divulgations-legales-et-cas-concrets-faits-obtenus-pas-seulement-capacites.md
+    - Forensics publics — résultats bornés par plateforme, OS, version et date: recherche/08-forensics-publics-resultats-bornes-par-plateforme-os-version-et-date.md
+    - Audits SimpleX — écarts de périmètre et état 2026: recherche/09-audits-simplex-ecarts-de-perimetre-et-etat-2026.md
+    - Censure — ce que les mesures publiques permettent réellement d’affirmer: recherche/10-censure-ce-que-les-mesures-publiques-permettent-reellement-daffirmer.md
+    - Éléments probatoires à préserver dans la matrice globale: recherche/11-elements-probatoires-a-preserver-dans-la-matrice-globale.md
+    - Contradictions et distinctions de périmètre à conserver dans les matrices: recherche/12-contradictions-et-distinctions-de-perimetre-a-conserver-dans-les-matrices.md
+    - Expériences sûres qui apporteront une preuve supérieure: recherche/13-experiences-sures-qui-apporteront-une-preuve-superieure.md
+    - Mobile privacy / déclarations de magasins — contrôle ponctuel, 13 octobre 2026: recherche/14-mobile-privacy-declarations-de-magasins-controle-ponctuel-13-octobre-2026.md
+    - Dépôts publics / activité observée — échantillon borné, pas audit exhaustif: recherche/15-depots-publics-activite-observee-echantillon-borne-pas-audit-exhaustif.md
+    - OSINT d’infrastructure — limite de la collecte actuelle: recherche/16-osint-dinfrastructure-limite-de-la-collecte-actuelle.md
+    - Audits lus en détail — Briar, Threema et Delta Chat: recherche/17-audits-lus-en-detail-briar-threema-et-delta-chat.md
+    - État d’audit Delta Chat — distinction probatoire: recherche/22-etat-daudit-delta-chat-distinction-probatoire.md
+    - Matrice transversale TM1–TM15 — synthèse 18 solutions: recherche/36-matrice-transversale-tm1tm15-synthese-18-solutions.md
+    - Contradictions matérielles, inconnues restantes et essais nécessaires: recherche/37-contradictions-materielles-inconnues-restantes-et-essais-necessaires.md
+- Le projet:
+  - Rapport canonique: rapport/index.md
+  - Contribuer: contribuer.md
+  - Maintenance et domaine: maintenance.md

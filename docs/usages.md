@@ -1,0 +1,58 @@
+---
+title: Choisir selon son usage
+description: Paliers conditionnels par usage, configuration pseudonyme Signal et contraintes
+  iPhone et PC.
+search:
+  boost: 2
+source_file: rapport-final-messageries.md
+source_line: 300
+---
+
+# Choisir selon son usage
+
+Ce sont des paliers conditionnels, pas un ordre numérique ni un « score global ».
+
+| Besoin | Choix à examiner en premier | Pourquoi / réserve principale |
+|---|---|---|
+| A — Sécurité générale pour usage normal | Signal; Threema; Olvid; WhatsApp si adoption prioritaire | Maturité, E2EE et maintenance (Signal); identité no-phone (Threema/Olvid); adoption énorme mais métadonnées (WhatsApp). Configuration et version comptent. |
+| B — Minimisation des métadonnées de compte | SimpleX; Cwtch; Briar; Ricochet Refresh | Identifiants par relation ou onion; moins de compte global. Briar/Cwtch/Ricochet ont des limites de plateforme/maturité; SimpleX garde relais/push/transport. |
+| C — Pseudonymat utilisable | SimpleX; Signal renforcé; Threema; Olvid | SimpleX n’associe pas de numéro obligatoire; Signal offre username privé au contact mais numéro nécessaire côté service; Threema/Olvid évitent numéro requis. |
+| D — Réduction d’identification réseau contre observateur limité | Briar/Cwtch/Ricochet (Tor), SimpleX avec relais correctement configurés, Session pour messages uniquement après résolution des findings | Tor/onion déplace les observateurs; pas de protection globale. Pas de client iOS pour Briar/Cwtch/Ricochet. Session est rétrogradé en attente de correctifs/retest. |
+| E — Minimisation des métadonnées sociales | SimpleX; Cwtch; Briar; Signal avec username discovery off | Le graphe est moins centralisé/identifiable; P2P peut exposer IP; Signal garde numéro côté fournisseur. |
+| F — Résistance à un opérateur malveillant | Briar/Cwtch/Ricochet pour minimiser service central; Signal/Matrix/Threema avec vérification de clés selon cas | Distribution réduit un pouvoir central mais élargit la chaîne. Key transparency Matrix/Signal ne prouve pas l’identité réelle; aucun n’évite client/update ciblé. |
+| G — Résistance à une demande fournisseur | Services détenant peu de données identifiantes (SimpleX/Cwtch/Briar/Ricochet), sous réserve de relais/tiers | Ne signifie pas immunité juridique : téléphone, FAI, store, serveur onion, destinataire et terminal restent des sources. Signal/Threema ont des divulgations de données de compte publiées. |
+| H — Deux pseudonymes Internet sans téléphone partagé | SimpleX; Signal renforcé si numéro d’inscription non relié publiquement à l’identité; Cwtch si les deux participants peuvent l’utiliser | SimpleX lien par relation; Signal facilite l’adoption et le PC mais son fournisseur reçoit le numéro; Cwtch n’a pas iOS. |
+| I — Contact malveillant / empêcher l’IP au pair | SimpleX avec TURN; Olvid (TURN-only documenté); Signal réglage relayé; Briar/Cwtch si appels inutiles | Relais cache l’IP au pair, la donne au relais. Désactiver P2P et ne cliquer aucun lien profilant. |
+| J — Censure / coupure | Briar en Android; Cwtch; fédération Matrix/XMPP; options Tor/relays auto-hébergés | Résilience dépend des bridges, stores, bootstrap, domaine, ASN et pays. Briar est en maintenance; aucune campagne OONI actuelle complète n’a été réalisée ici. |
+| K — Journaliste/source | Briar pour deux utilisateurs Android avec besoin hors réseau; Signal pour adoption et sécurité opérationnelle générale; SimpleX/Cwtch selon cloisonnement | Le canal ne remplace pas protocole éditorial, vérification d’identité, protection appareil, traitement de fichiers ou plan de secours. |
+| L — Grandes équipes/groupes | Matrix/Element auto-hébergé et configuré; Wire; WhatsApp/Discord quand adoption prime | Matrix/Wire offrent des contrôles administratifs; Discord est mauvais pour confidentialité texte; vérifier gestion des appareils et historique de groupe. |
+| M — Simplicité et migration de proches | Signal; WhatsApp si adoption avant tout | Signal permet E2EE sans changement d’usage majeur; WhatsApp a une base de contacts mais collecte de metadata et compte numéro. |
+
+## Classement par configuration concrète
+
+| Configuration | Niveau relatif | Choix plausibles | Ce que l’on gagne / ce qui reste |
+|---|---|---|---|
+| **Par défaut / sans réglages particuliers** | Dépend fortement des defaults, donc pas de classement unique | Signal, SimpleX, Threema, WhatsApp selon besoin | Signal cache généralement le numéro aux personnes qui ne l’ont pas déjà; découverte par numéro reste activée par défaut. SimpleX minimise l’ID, mais le push iOS par défaut peut augmenter metadata. WhatsApp protège le contenu des chats personnels mais pas numéro/metadata. Telegram/Discord ne protègent pas le texte E2EE. |
+| **Renforcée** | Signal ou SimpleX selon priorité; Olvid/Threema si absence de numéro chez interlocuteur | Signal : visibilité numéro `Nobody`, découverte par numéro `Nobody`, username unique partagé; SimpleX : profil distinct, invitation unitaire, push iOS moins riche si acceptable, relais d’appel forcé; Olvid : calls TURN, profils/appareils vérifiés; Threema : aucune liaison téléphone/e-mail sauf besoin | Renforce cloisonnement/anti-contact/metadata ciblées; ne résout pas le service qui connaît le numéro (Signal), la visibilité des relais, les stores, un appareil compromis ou la divulgation du correspondant. |
+| **Pseudonyme fort, mais non-anonyme** | SimpleX en premier; Signal renforcé sous préconditions; Cwtch si platform fit | Identité neuve par relation, pas de profil public, jamais de username/avatar réutilisé; appel sans P2P; vérifier l’identité hors bande | Réduit l’énumération et le lien direct vers identité civile. Le lien Discord initial, l’IP aux premiers relais/FAI, les habitudes et les appareils restent corrélables. |
+
+## Signal en username-only : verdict réévalué
+
+La configuration demandée améliore réellement la confidentialité vis-à-vis du contact :
+
+1. `Who can see my number` → **Nobody**.
+2. `Who can find me by my number` → **Nobody**.
+3. Créer un username non réutilisé et le partager directement; le username n’est pas un handle public recherché et ne s’affiche pas automatiquement dans la conversation.
+4. Utiliser un nom/photo/profil sans lien vers d’autres identités; ne pas supposer que l’avatar est caché au correspondant.
+5. Vérifier les safety numbers manuellement via un canal indépendant lorsqu’on ne connaît pas le numéro du correspondant; AKV ne certifie pas une identité humaine et ne permet pas, dans le cas username-only, l’autovérification de l’autre compte sans connaître son numéro.
+
+**Ce que cette configuration change :** un doxxer qui ne connaît que le numéro ne devrait pas retrouver le compte si le réglage de recherche est correctement activé; le contact initial n’a pas besoin de recevoir le numéro. **Ce qu’elle ne change pas :** Signal doit recevoir un numéro valide pour inscrire le compte; Signal peut relier le numéro à son compte. Si le numéro est connu des opérateurs, réutilisé, payé/activé par une identité réelle ou lié à d’autres services, le pseudonymat peut s’effondrer. Un numéro non publiquement relié à l’identité n’est pas automatiquement anonyme vis-à-vis de l’opérateur téléphonique ou de Signal. **Conclusion :** Signal remonte substantiellement dans le cas iPhone + PC et dans le pseudonymat envers le correspondant, mais ne rejoint pas SimpleX sur l’absence d’identifiant global obligatoire ni sur la séparation fournisseur–numéro.
+
+## iPhone + PC
+
+| Palier d’usage | Options | Motif déterminant |
+|---|---|---|
+| Le plus praticable sans perdre la sécurité de contenu | Signal | iPhone + clients Win/macOS/Linux officiels; l’iPhone reste primaire et appaire les desktops. Username privacy peut cacher le numéro du contact, mais pas du service. |
+| Alternative sans numéro requis | SimpleX, Olvid, Threema | SimpleX nécessite appairage mobile–desktop sur même LAN et notifications/stockage à comprendre; Olvid multi-device simultané sous licence et ancien historique non transféré; Threema 2.0 Desktop bêta sans PFS. |
+| Plateforme personnalisable / serveur choisi | Matrix/Element ou XMPP/OMEMO | iOS et PC possibles via clients précis; choisir et configurer homeserver, identité, encryption des salons, backups, push et appels. Ce n’est pas un résultat automatique du protocole. |
+| À ne pas recommander comme solution pratique iPhone | Briar, Cwtch, Ricochet Refresh | Pas de client iOS officiel établi; Briar Desktop bêta ne remplace pas Briar sur iPhone. Cwtch peut connecter desktop/Android mais pas iOS; Ricochet est desktop. |

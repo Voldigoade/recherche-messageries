@@ -1,0 +1,9 @@
+{
+  "profile": "content-site",
+  "sourceRoots": ["docs/stylesheets", "docs/javascripts", "overrides"],
+  "commands": {
+    "build": "python -m mkdocs build --strict",
+    "links": "python scripts/check_site.py"
+  },
+  "requiredCommands": ["build", "links"]
+}
