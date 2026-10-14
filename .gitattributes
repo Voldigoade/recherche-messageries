@@ -1,3 +1,4 @@
 * text=auto eol=lf
 research/*.md -text
+docs/downloads/*.txt -text
 *.svg text
