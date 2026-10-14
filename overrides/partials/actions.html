@@ -1,3 +1,5 @@
 {% if page.edit_url %}
-<a href="{{ page.edit_url }}" title="Modifier la source" class="md-content__button md-icon" aria-label="Modifier la source">{% include ".icons/material/file-edit-outline.svg" %}</a>
+{% set lang = i18n_page_locale if i18n_page_locale is defined else 'fr' %}
+{% set label = 'Edit source' if lang == 'en' else ('Editar fuente' if lang == 'es' else 'Modifier la source') %}
+<a href="{{ page.edit_url }}" title="{{ label }}" class="md-content__button md-icon" aria-label="{{ label }}">{% include ".icons/material/file-edit-outline.svg" %}</a>
 {% endif %}

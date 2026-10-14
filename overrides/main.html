@@ -2,7 +2,7 @@
 
 {% block extrahead %}
 {{ super() }}
-{% set lang = i18n_current_language if i18n_current_language is defined else 'fr' %}
+{% set lang = i18n_page_locale if i18n_page_locale is defined else 'fr' %}
 <meta name="author" content="Voldigoade">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 {% if page %}
@@ -41,7 +41,7 @@
 {% block content %}
 {{ super() }}
 {% if page %}
-{% set lang = i18n_current_language if i18n_current_language is defined else 'fr' %}
+{% set lang = i18n_page_locale if i18n_page_locale is defined else 'fr' %}
 <aside class="study-provenance" aria-label="{{ 'Page provenance' if lang == 'en' else ('Procedencia de la página' if lang == 'es' else 'Provenance de cette page') }}">
   {% if lang == 'en' %}
   Report 1.0 · Last updated: <time datetime="2026-10-14">14 October 2026</time>.<br>
