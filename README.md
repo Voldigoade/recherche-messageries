@@ -1,33 +1,57 @@
-# Étude des messageries
+# Secure Messaging Research
 
-Recherche indépendante et évolutive sur la sécurité, la vie privée et le pseudonymat de 18 solutions de messagerie.
+I built this project to answer a question that is usually oversimplified: **which messaging app is actually the right choice for a given threat model?**
 
-**[Lire l’étude](https://voldigoade.github.io/recherche-messageries/)**
+It compares 18 messaging systems across content security, metadata, pseudonymity, network exposure, calls, device support, public audits, known vulnerabilities and real-world legal disclosures.
 
-Rapport de référence **1.0**, mis à jour le **14 octobre 2026**. Les conclusions sont conditionnelles aux versions, configurations et adversaires considérés. Il n’existe pas de gagnant universel.
+**[Read the website](https://voldigoade.github.io/recherche-messageries/)** · [Quick chooser](https://voldigoade.github.io/recherche-messageries/guide-rapide/) · [English](https://voldigoade.github.io/recherche-messageries/en/) · [Español](https://voldigoade.github.io/recherche-messageries/es/)
 
-Le [rapport final](research/rapport-final-messageries.md) est la source canonique. Le [registre Phase 2](research/enquete-messageries-progress.md) conserve les preuves détaillées et leurs limites ; ses synthèses historiques ne remplacent pas le rapport final. Aucun classement numérique de l’ancienne Phase 3 n’est repris.
+## Quick take
 
-## Méthodologie
+There is no universal winner.
 
-Recherche documentaire et sources primaires. Pas de laboratoire réseau, pas de tests forensiques contrôlés, pas de reproduction bit à bit des binaires. **UNKNOWN reste UNKNOWN.** Une déclaration fournisseur et une preuve indépendante sont distinguées.
+| If you mainly need… | Start with… | Main caveat |
+|---|---|---|
+| A practical secure messenger on iPhone + PC | **Signal** | A phone number is still required by the service, even if hidden from contacts. |
+| A separate pseudonymous identity for people met online | **SimpleX** | Relays, push notifications and endpoints still expose metadata. |
+| No phone number shared with the other person | **SimpleX, Threema or Olvid** | They solve different identity and network problems; none makes the device anonymous. |
+| Tor-oriented messaging / reduced direct network exposure | **Cwtch or Briar** | No official iOS client in the scope of this study; both are specialised tools. |
+| Large teams or self-hosted collaboration | **Matrix / Element** | The homeserver still sees substantial metadata even with E2EE rooms. |
 
-## Construire et maintenir
+Discord text and Telegram Cloud Chats are **not** equivalent to an end-to-end encrypted private messenger.
 
-Python 3.12 ou ultérieur. Créer et activer un environnement virtuel, puis :
+## What is in the research
 
-```console
-python -m pip install -r requirements.txt
-python scripts/structure_docs.py
-python -m mkdocs build --strict
-python scripts/check_site.py
-python -m mkdocs serve
-```
+The public documentation includes:
 
-MkDocs et Material simplifié, recherche locale, aucun backend. GitHub Actions vérifie les pull requests et déploie chaque push sur `main` via GitHub Pages. Les pages sont extraites de `research/` ; ne pas éditer directement les pages générées. Les liens « Modifier la source » ouvrent leur fichier d’origine. [Maintenance et domaine personnalisé](docs/maintenance.md).
+- a short decision guide for non-specialists;
+- per-messenger summaries;
+- a TM1–TM15 threat-model matrix;
+- metadata visibility by provider, contact, ISP, Apple/Google and authorities;
+- call/IP exposure and TURN/P2P distinctions;
+- audits, vulnerabilities and version limits;
+- public law-enforcement and court cases;
+- OPSEC recommendations;
+- the full evidence register for readers who want to verify the details.
 
-## Contribution et licence
+The conclusions are dated **14 October 2026** and are conditional on the version, platform, configuration and adversary. Unknowns are kept as unknowns instead of being turned into scores.
 
-[Signaler une information obsolète ou proposer une source](https://github.com/Voldigoade/recherche-messageries/issues/new/choose). Lire [CONTRIBUTING.md](CONTRIBUTING.md) avant une pull request.
+## Evidence and limitations
 
-Recherche et documentation sous CC BY-SA 4.0 ; scripts et configuration sous MIT. Voir [LICENSE](LICENSE) et [LICENSE-CODE](LICENSE-CODE).
+This is a source-driven research project, not a security certification. It includes primary documentation, public source code, independent audits, academic work, advisories, transparency reports and court material where available.
+
+No controlled network lab, commercial mobile-forensics acquisition or bit-for-bit rebuild of every distributed binary was performed for version 1.0. Those gaps are stated explicitly in the site.
+
+The reference report is [`research/rapport-final-messageries.md`](research/rapport-final-messageries.md). The detailed evidence register is [`research/enquete-messageries-progress.md`](research/enquete-messageries-progress.md).
+
+## Languages
+
+The full evidence base is maintained in French. A reviewed **English** guide and a shorter **Spanish** guide are provided for the main findings and recommendations. I prefer a smaller number of accurate translations over automatically publishing technical translations that may change the meaning of a security claim.
+
+## Contributing
+
+If a claim is outdated, a source disappeared, or a newer audit / advisory / court record changes a conclusion, [open an issue](https://github.com/Voldigoade/recherche-messageries/issues/new/choose) with the product, version, date and source.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) before proposing a change.
+
+Research and documentation: **CC BY-SA 4.0**. Scripts and configuration: **MIT**.
