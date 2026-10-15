@@ -109,7 +109,7 @@ def ui_separator(lang):
 def paths_html(lang):
     paths = [
         (tr('Une recommandation (2 à 5 minutes)','A recommendation (2–5 minutes)','Una recomendación (2–5 minutos)',lang),'guide-rapide.md','choisir.md'),
-        (tr('Comprendre la vie privée (10 à 20 minutes)','Understand privacy (10–20 minutes)','Entender la privacidad (10–20 minutes)',lang),'concepts/index.md','idees-recues.md'),
+        (tr('Comprendre la vie privée (10 à 20 minutes)','Understand privacy (10–20 minutes)','Entender la privacidad (10–20 minutos)',lang),'concepts/index.md','idees-recues.md'),
         (tr('Comparer deux applications','Compare two applications','Comparar dos aplicaciones',lang),'comparer.md','comparatif.md'),
         (tr('OPSEC et contacts pseudonymes','OPSEC and pseudonymous contacts','OPSEC y contactos seudónimos',lang),'opsec.md','usages.md'),
         (tr('Vérifier la recherche','Verify the research','Verificar la investigación',lang),'methodologie.md','audits.md'),
