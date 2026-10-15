@@ -97,7 +97,7 @@ def main():
         rows = ["| Référence d’origine | Réponse au contrôle |", "|---|---|"]
         for item in availability["issues"]:
             code = item["status"]
-            status = {404: "HTTP 404 — URL indisponible au contrôle", 403: "HTTP 403 — accès refusé au robot", 429: "HTTP 429 — limitation de requêtes", 500: "HTTP 500 — erreur du serveur", "unverified": "Non vérifié — timeout ou erreur réseau"}.get(code, f"HTTP {code}")
+            status = {404: "HTTP 404 : URL indisponible au contrôle", 403: "HTTP 403 : accès refusé au robot", 429: "HTTP 429 : limitation de requêtes", 500: "HTTP 500 : erreur du serveur", "unverified": "Non vérifié : timeout ou erreur réseau"}.get(code, f"HTTP {code}")
             rows.append(f"| [{item['url']}]({item['url']}) | {status} |")
         page("disponibilite-sources.md", "Disponibilité des références", f'''Contrôle de disponibilité effectué le **{availability['date_fr']}** sur {availability['total']} URL citées : {availability['available']} ont répondu HTTP 200 ou 202. Les autres réponses sont consignées ci-dessous.
 
