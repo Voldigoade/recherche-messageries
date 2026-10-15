@@ -7,8 +7,8 @@
     "sha256": "1d59046d7ede09234fc5a6b8986df76fc2cd480d652b87fe3802fe8d302e523c"
   },
   "unknown": {
-    "fr": "Inconnu — non établi pour la version et la configuration considérées.",
-    "en": "Unknown — not established for the version and configuration in question.",
+    "fr": "Inconnu : non établi pour la version et la configuration considérées.",
+    "en": "Unknown: not established for the version and configuration in question.",
     "es": "Desconocido: no establecido para la versión y configuración consideradas."
   },
   "sources": {
@@ -5451,8 +5451,8 @@
         },
         "linux": {
           "text": {
-            "fr": "Inconnu — non établi pour la version et la configuration considérées.",
-            "en": "Unknown — not established for the version and configuration in question.",
+            "fr": "Inconnu : non établi pour la version et la configuration considérées.",
+            "en": "Unknown: not established for the version and configuration in question.",
             "es": "Desconocido: no establecido para la versión y configuración consideradas."
           },
           "sources": [
@@ -6999,8 +6999,8 @@
         },
         "windows": {
           "text": {
-            "fr": "Inconnu — non établi pour la version et la configuration considérées.",
-            "en": "Unknown — not established for the version and configuration in question.",
+            "fr": "Inconnu : non établi pour la version et la configuration considérées.",
+            "en": "Unknown: not established for the version and configuration in question.",
             "es": "Desconocido: no establecido para la versión y configuración consideradas."
           },
           "sources": [
@@ -7011,8 +7011,8 @@
         },
         "macos": {
           "text": {
-            "fr": "Inconnu — non établi pour la version et la configuration considérées.",
-            "en": "Unknown — not established for the version and configuration in question.",
+            "fr": "Inconnu : non établi pour la version et la configuration considérées.",
+            "en": "Unknown: not established for the version and configuration in question.",
             "es": "Desconocido: no establecido para la versión y configuración consideradas."
           },
           "sources": [
@@ -7023,8 +7023,8 @@
         },
         "linux": {
           "text": {
-            "fr": "Inconnu — non établi pour la version et la configuration considérées.",
-            "en": "Unknown — not established for the version and configuration in question.",
+            "fr": "Inconnu : non établi pour la version et la configuration considérées.",
+            "en": "Unknown: not established for the version and configuration in question.",
             "es": "Desconocido: no establecido para la versión y configuración consideradas."
           },
           "sources": [

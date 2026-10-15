@@ -102,15 +102,19 @@ def write(docs, path, lang, title, body, description=None, editorial='data/messe
     target.write_text('---\n' + yaml.safe_dump(meta,allow_unicode=True,sort_keys=False) + '---\n\n# ' + title + '\n\n' + body.rstrip() + '\n',encoding='utf-8')
 
 
+def ui_separator(lang):
+    return ' : ' if lang == 'fr' else ': '
+
+
 def paths_html(lang):
     paths = [
-        (tr('Une recommandation — 2 à 5 minutes','A recommendation — 2–5 minutes','Una recomendación — 2–5 minutos',lang),'guide-rapide.md','choisir.md'),
-        (tr('Comprendre la vie privée — 10 à 20 minutes','Understand privacy — 10–20 minutes','Entender la privacidad — 10–20 minutos',lang),'concepts/index.md','idees-recues.md'),
+        (tr('Une recommandation (2 à 5 minutes)','A recommendation (2–5 minutes)','Una recomendación (2–5 minutos)',lang),'guide-rapide.md','choisir.md'),
+        (tr('Comprendre la vie privée (10 à 20 minutes)','Understand privacy (10–20 minutes)','Entender la privacidad (10–20 minutos)',lang),'concepts/index.md','idees-recues.md'),
         (tr('Comparer deux applications','Compare two applications','Comparar dos aplicaciones',lang),'comparer.md','comparatif.md'),
         (tr('OPSEC et contacts pseudonymes','OPSEC and pseudonymous contacts','OPSEC y contactos seudónimos',lang),'opsec.md','usages.md'),
         (tr('Vérifier la recherche','Verify the research','Verificar la investigación',lang),'methodologie.md','audits.md'),
     ]
-    return '<ol class="reading-paths">' + ''.join(f'<li><strong>{E(title)}</strong> — <a href="{url(a,lang)}">{E(page_name(a,lang))}</a> → <a href="{url(b,lang)}">{E(page_name(b,lang))}</a></li>' for title,a,b in paths) + '</ol>'
+    return '<ol class="reading-paths">' + ''.join(f'<li><strong>{E(title)}</strong>{ui_separator(lang)}<a href="{url(a,lang)}">{E(page_name(a,lang))}</a> → <a href="{url(b,lang)}">{E(page_name(b,lang))}</a></li>' for title,a,b in paths) + '</ol>'
 
 
 def page_name(path,lang):
@@ -138,7 +142,7 @@ def generate(docs, config, old_nav):
         write(docs,'parcours.md',lang,page_name('parcours.md',lang),paths_html(lang) + '\n\n' + evidence_note(lang))
 
         quick = '<p>' + tr('Commencez par votre besoin, puis vérifiez la réserve. Ce sont des points de départ, jamais des garanties.','Start with your need, then check the caveat. These are starting points, never guarantees.','Empiece por su necesidad y compruebe la reserva. Son puntos de partida, nunca garantías.',lang) + '</p>'
-        quick += '<ul>' + ''.join(f'<li><strong>{E(by_id[id]["name"])}</strong> — {E(value(by_id[id],"best",lang))}<br>{E(value(by_id[id],"weakness",lang))} <a href="{url("messageries/"+id+".md",lang)}">{tr("Conditions", "Conditions", "Condiciones",lang)}</a></li>' for id in ['signal','simplex','olvid','threema']) + '</ul>'
+        quick += '<ul>' + ''.join(f'<li><strong>{E(by_id[id]["name"])}</strong>{ui_separator(lang)}{E(value(by_id[id],"best",lang))}<br>{E(value(by_id[id],"weakness",lang))} <a href="{url("messageries/"+id+".md",lang)}">{tr("Conditions", "Conditions", "Condiciones",lang)}</a></li>' for id in ['signal','simplex','olvid','threema']) + '</ul>'
         quick += '<p>' + tr('Session reste rétrogradé pour l’assurance élevée ; Cwtch et Briar n’ont pas de client iOS officiel établi ici.','Session remains downgraded for high assurance; Cwtch and Briar have no official iOS client established here.','Session sigue rebajado para alta garantía; no se establece cliente iOS oficial de Cwtch ni Briar.',lang) + '</p>'
         quick += f'<p><a href="{url("choisir.md",lang)}">{page_name("choisir.md",lang)}</a> · <a href="{url("usages.md",lang)}">{page_name("usages.md",lang)}</a></p>' + definitions(['phone','e2ee','network'],lang) + note(lang)
         write(docs,'guide-rapide.md',lang,page_name('guide-rapide.md',lang),quick)
@@ -178,7 +182,7 @@ def generate(docs, config, old_nav):
                 body+='\n## Conclusion canonique et matrice de référence\n\n'+original
             else: body+=evidence_note(lang,'messageries/'+m['id']+'.md')
             write(docs,'messageries/'+m['id']+'.md',lang,m['name'],body,tr('Fiche de référence : ','Reference profile: ','Ficha de referencia: ',lang)+m['name']+'. '+value(m,'weakness',lang))
-        index = '<ul>'+''.join(f'<li><a href="{url("messageries/"+m["id"]+".md",lang)}">{m["name"]}</a> — {E(value(m,"best",lang))}</li>' for m in messages)+'</ul>'
+        index = '<ul>'+''.join(f'<li><a href="{url("messageries/"+m["id"]+".md",lang)}">{m["name"]}</a>{ui_separator(lang)}{E(value(m,"best",lang))}</li>' for m in messages)+'</ul>'
         write(docs,'messageries/index.md',lang,page_name('messageries/index.md',lang),index)
 
         # A rules-backed, accessible guide with no answer persistence.
@@ -205,7 +209,7 @@ def generate(docs, config, old_nav):
         cases_html=''
         for case in use_cases(lang):
             cases_html+='\n## '+case['title']+'\n\n'+ '<p>'+case['reason']+'</p>'
-            cases_html += '<ol>'+''.join(f'<li><a href="{url("messageries/"+id+".md",lang)}">{by_id[id]["name"]}</a> — {E(value(by_id[id],"weakness",lang))}<br><strong>'+tr('Conditions : ','Conditions: ','Condiciones: ',lang)+'</strong>'+E(value(by_id[id],'configuration',lang))+'</li>' for id in case['candidates'])+'</ol>'
+            cases_html += '<ol>'+''.join(f'<li><a href="{url("messageries/"+id+".md",lang)}">{by_id[id]["name"]}</a>{ui_separator(lang)}{E(value(by_id[id],"weakness",lang))}<br><strong>'+tr('Conditions : ','Conditions: ','Condiciones: ',lang)+'</strong>'+E(value(by_id[id],'configuration',lang))+'</li>' for id in case['candidates'])+'</ol>'
             cases_html+='<p><strong>'+tr('Confiance : ','Confidence: ','Confianza: ',lang)+'</strong>'+ui['confidence']+'</p>'+ref_html(['report.uses','report.threats'],lang,case['title'])
         # Preserve the canonical use-case tables and Signal configuration in French.
         if lang=='fr': cases_html+='\n## Analyse canonique intégrale\n\n'+(docs/'usages.md').read_text(encoding='utf-8').split('\n# ',1)[1].split('\n',1)[1]
